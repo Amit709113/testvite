@@ -8,6 +8,7 @@ function App() {
 
   return (
     <>
+      <h1>this is deploying demo</h1>
       <p>deploying static page on github pages</p>
     </>
   )
