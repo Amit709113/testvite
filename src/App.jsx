@@ -6,7 +6,7 @@ import CarouselSlider from './components/CarouselSlider';
 import VlogList from './components/VlogList.jsx';
 import Topper from './components/Topper';
 import Testimonial from './components/Testimonial';
-
+import ContectInfo from './components/ContectInfo';
 import data from './data/topperData.json';
 import artical from './data/vlogData.json'
 
@@ -24,6 +24,7 @@ function App() {
       <VlogList data={artical.articals}/>
       <Topper />
       <Testimonial testimonialData={data} />
+      <ContectInfo />
     </>
   )
 }

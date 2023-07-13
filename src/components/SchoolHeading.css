@@ -1,8 +1,11 @@
-*{
+*,::before,::after{
     padding:0;
     margin:0;
     box-sizing: border-box;
     font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+::before,::after{
+   box-sizing: border-box;
 }
 .school_info{
     display: grid;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './navbar_style.css';
+import { IoMenu } from "react-icons/io5";
 
 const Navbar = () =>{
     const [showMediaIcon,setShowMediaIcon]=useState(false);
@@ -38,7 +39,8 @@ const Navbar = () =>{
             <div id="hamburger-menu" onClick={()=>{
                 setShowMediaIcon(!showMediaIcon)
             }}>
-                <i className='fas fa-bars'></i>
+                {/* <i className='fas fa-bars'></i> */}
+                <IoMenu style={{fontSize:'2.2rem'}} />
             </div>
             
 
