@@ -16,7 +16,7 @@ function App() {
       <p>deploying static page on github pages</p>
       <img src={src3} alt="our image" />
       <img src={src2} style={{height:'200px'}} alt="cat image"/>
-      <img src={src2} style={{height:'200px'}} alt="cat image"/>
+      <img src={src4} style={{height:'200px'}} alt="cat image"/>
     </>
   )
 }
