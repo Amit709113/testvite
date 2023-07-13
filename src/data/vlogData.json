@@ -1,0 +1,25 @@
+{
+    "articals":[
+        {
+            "title":"Our Strength ",
+            "description":"Divine Public School ensures acedemic excellence, character building and leadership skills which help allround development of a student",
+            "key":0
+        },
+        {
+            "title":"Why DPS",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sit totam soluta provident aliquam perferendis inventore obcaecati iusto assumenda facilis facere hic, cumque esse enim deserunt beatae! Saepe, itaque impedit.",
+            "key":1
+        },
+        {
+            "title":"Academic",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sit totam soluta provident aliquam perferendis inventore obcaecati iusto assumenda facilis facere hic, cumque esse enim deserunt beatae! Saepe, itaque impedit.",
+            "key":2
+        },
+        {
+            "title":"Activity",
+            "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sit totam soluta provident aliquam perferendis inventore obcaecati iusto assumenda facilis facere hic, cumque esse enim deserunt beatae! Saepe, itaque impedit.",
+            "key":3
+        }
+        
+    ]
+}
