@@ -1,6 +1,13 @@
 import styles from "./Testimonial.module.css";
 import React, { useEffect, useRef, useState } from "react";
- import imgSrc from '../assets/preity.jpg';
+import imgSrc0 from '../assets/khushi.jpg';
+import imgSrc1 from '../assets/preity.jpg';
+import imgSrc2 from '../assets/ayush.jpg';
+import imgSrc3 from '../assets/aryan.jpg';
+import imgSrc4 from '../assets/anjali.jpg';
+import imgSrc5 from '../assets/pawan.jpg';
+
+const imgArr=[imgSrc0,imgSrc1,imgSrc2,imgSrc3,imgSrc4,imgSrc5];
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
@@ -72,7 +79,7 @@ const Testimonial = (props) => {
           className={`${styles["quotes-img"]} ${styles["quotes-img-right"]}`}
         />
         {testimonialData.map((el, i) => {
-          {console.log(el.imgSrc)}
+          
           return (
             <div
               key={i}
@@ -82,7 +89,7 @@ const Testimonial = (props) => {
               <div className={styles.para}>{el.testimonial}</div>
               <div className={styles.image_container}>
 
-                <img src={imgSrc} alt="default" className={styles.image} />
+                <img src={imgArr[i]} alt="default" className={styles.image} />
 
               </div>
               <div className={styles.subText}>{el.author}</div>
