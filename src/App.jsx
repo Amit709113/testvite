@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
+import Topper from './components/Topper';
 import Testimonial from './components/Testimonial';
 import data from './data/topperData.json';
-import img1 from './assets/preity.jpg';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+      <Topper />
       <Testimonial testimonialData={data} />
     </>
   )
