@@ -5,7 +5,7 @@ import logo from '../assets/logo.jpg'
 const SchoolHeading = () => {
   return (
     <div className="school_info">
-        <div className='container'>
+        <div className='container-school-heading'>
                 <div className="logo-container">
                     <img src={logo} alt="logo" className='logo-image' width={100} />
                 </div>

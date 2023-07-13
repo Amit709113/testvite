@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
 
+import './Carousel.css';
 
 import cimgsrc0 from '../assets/gate.jpg'
 import cimgsrc1 from '../assets/office.jpg'
@@ -9,11 +10,6 @@ import cimgsrc3 from '../assets/infra.jpg'
 import cimgsrc4 from '../assets/schoolname.jpg'
 
 const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
-
-//write here import statement for images after compressing
-
-import './Carousel.css';
-
 
 const Carousel = ({data}) => {
   const [slide,setSlides]=useState(0);
