@@ -1,6 +1,6 @@
 import styles from "./Testimonial.module.css";
 import React, { useEffect, useRef, useState } from "react";
-// import imgSrc from '../Images/seema.jpg';
+ import imgSrc from '../assets/preity.jpg';
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
@@ -82,7 +82,7 @@ const Testimonial = (props) => {
               <div className={styles.para}>{el.testimonial}</div>
               <div className={styles.image_container}>
 
-                <img src={el.imgSrc} alt="default" className={styles.image} />
+                <img src={imgSrc} alt="default" className={styles.image} />
 
               </div>
               <div className={styles.subText}>{el.author}</div>
