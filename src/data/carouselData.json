@@ -1,0 +1,25 @@
+{
+    "slides":[
+        {
+            "src":"src/Images/gate.jpg",
+            "alt":"image 1 for enterence"
+        },
+        {
+            "src":"src/Images/office.jpg",
+            "alt":"image 2 office"
+        },
+        {
+            "src":"src/Images/cca.jpg",
+            "alt":"image 3 cca"
+        },
+        {
+            "src":"src/Images/infra.jpg",
+            "alt":"image 4 infra"
+        },
+        {
+            "src":"src/Images/schoolname.jpg",
+            "alt":"image 3 main-building"
+        }
+    ]
+    
+}

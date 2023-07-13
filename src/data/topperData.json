@@ -1,0 +1,41 @@
+
+    [
+        {
+            "testimonial":"ipsum dolor sit  oo ss  fdefd dfds ",
+            "author":"Khushi Kumari",
+            "deg":"2K23 passout",
+            "imgSrc":"src/assets/khushi.jpg"
+        },
+        {
+            "testimonial":"Mama ka School tha so par liye aar kya ...",
+            "author":"Preity Singh",
+            "deg":"2K188 passout",
+            "imgSrc":"src/assets/preity.jpg"
+        },
+        {
+            "testimonial":"ipsum dolor sit oo ss  fdefd dfds ",
+            "author":"Ayush Singh",
+            "deg":"2K18 passout",
+            "imgSrc":"src/assets/ayush.jpg"
+        },
+        {
+            "testimonial":"ipsum dolor sit oo ss  fdefd dfds ",
+            "author":"Aryan Kumar",
+            "deg":"2K23 passout",
+            "imgSrc":"src/assets/aryan.jpg"
+        },
+        {
+            "testimonial":"Illo delectus similique cupiditate enim facilis juth hgh fsdfewd fdfef",
+            "author":"Anjali Kumari",
+            "deg":"2K18 passout",
+            "imgSrc":"src/assets/anjali.jpg"
+        },
+        {
+            "testimonial":"ipsum dolor d ",
+            "author":"Pawan Singh",
+            "deg":"2K18 passout",
+            "imgSrc":"src/assets/pawan.jpg"
+        }
+
+    ]
+
