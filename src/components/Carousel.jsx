@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
- 
-// import {slides} from '../data/carouselData.json'
+
+
+import cimgsrc0 from '../assets/gate.jpg'
+import cimgsrc1 from '../assets/office.jpg'
+import cimgsrc2 from '../assets/cca.jpg'
+import cimgsrc3 from '../assets/infra.jpg'
+import cimgsrc4 from '../assets/schoolname.jpg'
+
+const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
+
+//write here import statement for images after compressing
+
 import './Carousel.css';
 
 
@@ -21,8 +31,7 @@ const Carousel = ({data}) => {
       <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
         {
           data.map((item,idx)=>{
-            console.log(idx);
-            return <img src={item.src} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />
+              return <img src={imgArray[idx]} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />
           })
         }
       <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide}/>

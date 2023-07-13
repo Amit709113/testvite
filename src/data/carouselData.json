@@ -1,23 +1,23 @@
 {
     "slides":[
         {
-            "src":"src/Images/gate.jpg",
-            "alt":"image 1 for enterence"
+            "src":"src/assets/gate.jpg",
+            "alt":"image 1 enterence"
         },
         {
-            "src":"src/Images/office.jpg",
+            "src":"src/assets/office.jpg",
             "alt":"image 2 office"
         },
         {
-            "src":"src/Images/cca.jpg",
+            "src":"src/assets/cca.jpg",
             "alt":"image 3 cca"
         },
         {
-            "src":"src/Images/infra.jpg",
+            "src":"src/assets/infra.jpg",
             "alt":"image 4 infra"
         },
         {
-            "src":"src/Images/schoolname.jpg",
+            "src":"src/assets/schoolname.jpg",
             "alt":"image 3 main-building"
         }
     ]

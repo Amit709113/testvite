@@ -2,7 +2,7 @@ import React from 'react';
 import MostImpInfo from './components/MostImpInfo';
 import SchoolHeading from './components/SchoolHeading';
 import Navbar from './components/Navbar';
-// import CarouselSlider from './components/CarouselSlider';
+import CarouselSlider from './components/CarouselSlider';
 import VlogList from './components/VlogList.jsx';
 import Topper from './components/Topper';
 import Testimonial from './components/Testimonial';
@@ -20,7 +20,7 @@ function App() {
       <MostImpInfo />
       <SchoolHeading/>
       <Navbar />
-      {/* <CarouselSlider /> */}
+      <CarouselSlider />
       <VlogList data={artical.articals}/>
       <Topper />
       <Testimonial testimonialData={data} />
