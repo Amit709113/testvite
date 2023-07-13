@@ -55,6 +55,54 @@
     margin-bottom:1rem;
 }
 
+@media screen and (min-width:300px) and (max-width:374px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 0px 1fr 0px;
+        width: 100%;
+        padding: 0px 0px;
+        background: #6080f4;
+
+
+    }
+    .school-name h1{
+        font-size: 1.1rem;
+        margin:3px 0px;
+        color:#e9ec36;
+
+        
+    }
+    .school-address{
+        font-size:0.6rem;
+
+    }
+    
+}
+
+@media screen and (min-width:375px) and (max-width:410px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 0px 1fr 0px;
+        width: 100%;
+        padding: 0px 0px;
+        background: #6080f4;
+
+
+    }
+    .school-name h1{
+        font-size: 1.2rem;
+        margin:3px 0px;
+        color:#e9ec36;
+
+        
+    }
+    .school-address{
+        font-size:0.6rem;
+
+    }
+    
+}
+
 
 @media screen and (min-width:411px) and (max-width:439px){
     .school_info{
