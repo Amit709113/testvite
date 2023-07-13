@@ -13,12 +13,12 @@ const SchoolHeading = () => {
                 <div className="school-detail">
                     <div className="row">
                         <div className="school-name">
-                            <h1>DIVINE PUBLIC SCHOOL</h1>
+                            <h1 className='school-name-style'>DIVINE PUBLIC SCHOOL</h1>
                         </div>
                     </div>
                     <div className="row">
                         <div className="school-address">
-                            <span> Chandlaso Kuru Lohardaga 835213 </span>
+                            <span className='school-address-style'> Chandlaso Kuru Lohardaga 835213 </span>
                         </div>
 
                     </div>

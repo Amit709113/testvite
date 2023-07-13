@@ -12,7 +12,7 @@
     align-items: center;
 }
 .info marquee a{
-    color:black;
+    color:#333;
 }
 /* responsive media query */
 @media screen and (min-width:300px) and (max-width:775px){

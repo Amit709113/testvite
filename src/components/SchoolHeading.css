@@ -1,4 +1,4 @@
-*,::before,::after{
+*{
     padding:0;
     margin:0;
     box-sizing: border-box;
@@ -40,30 +40,46 @@
     color:#e9ec36
     
 }
+.school-name-style{
+    
+    /* color:linear-gradient(to bottom right, red, yellow); */
+    text-shadow: 3px 2px 6px #21240b;
+    -webkit-text-stroke: 0.5px rgba(178, 142, 43, 0.352);
+}
+.school-address-style{
+    color:#f2ee88;
+    -webkit-text-stroke: 3px rgba(178, 142, 43, 0.352);
+    text-shadow: 1px 1px 1px #21240b;
+}
 .school-address{
     margin-bottom:1rem;
 }
 
-@media screen and (min-width:527px) and (max-width:756px){
+
+@media screen and (min-width:411px) and (max-width:439px){
     .school_info{
         display: grid;
-        grid-template-columns: 50px 1fr 0px;
+        grid-template-columns: 0px 1fr 0px;
         width: 100%;
-        padding: 5px 0px;
+        padding: 0px 0px;
         background: #6080f4;
+
 
     }
     .school-name h1{
-        font-size: 1.7rem;
-        margin:5px -6px;
+        font-size: 1.4rem;
+        margin:3px 0px;
         color:#e9ec36;
+
         
     }
     .school-address{
-        font-size:0.9rem;
-    }
+        font-size:0.6rem;
 
+    }
+    
 }
+
 
 @media screen and (min-width:440px) and (max-width:527px){
     .school_info{
@@ -90,26 +106,49 @@
 
 }
 
-@media screen and (max-width:439px){
+@media screen and (min-width:527px) and (max-width:680px){
     .school_info{
         display: grid;
-        grid-template-columns: 0px 1fr 0px;
+        grid-template-columns: 50px 1fr 0px;
         width: 100%;
-        padding: 0px 0px;
+        padding: 5px 0px;
         background: #6080f4;
-
 
     }
     .school-name h1{
-        font-size: 1rem;
-        margin:3px 0px;
+        font-size: 1.7rem;
+        margin:5px -6px;
         color:#e9ec36;
-
         
     }
+    /* 680 753 */
     .school-address{
-        font-size:0.6rem;
+        font-size:0.9rem;
+    }
 
+}
+
+@media screen and (min-width:681px) and (max-width:753px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 50px 1fr 0px;
+        width: 100%;
+        padding: 5px 0px;
+        background: #6080f4;
+        
+    }
+    .school-name h1{
+        font-size: 2.1rem;/*to be change according to req*/
+        margin:5px -6px;
+        color:#e9ec36;
+        
+    }
+    /* 680 753 */
+    .school-address{
+        font-size:0.9rem;
     }
     
 }
+
+
+
