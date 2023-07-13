@@ -1,0 +1,115 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.school_info{
+    display: grid;
+    grid-template-columns: 6rem 1fr 3rem;
+    width: 100%;
+    padding: 5px 0px;
+    background: #6080f4;
+}
+/* grid template column of school-info 300 se 600*/
+.container{
+    /* grid-column:2/3; */
+    /* display:flex; */
+    display:grid;
+    grid-column: 2/3;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* something to do for responsive */
+.logo-container{
+    flex: 100px;
+}
+
+.school-detail{
+    flex:80%;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.school-name h1{
+    font-size: 2.3rem;
+    margin:10px -10px;
+    color:#e9ec36
+    
+}
+.school-address{
+    margin-bottom:1rem;
+}
+
+@media screen and (min-width:527px) and (max-width:756px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 50px 1fr 0px;
+        width: 100%;
+        padding: 5px 0px;
+        background: #6080f4;
+
+    }
+    .school-name h1{
+        font-size: 1.7rem;
+        margin:5px -6px;
+        color:#e9ec36;
+        
+    }
+    .school-address{
+        font-size:0.9rem;
+    }
+
+}
+
+@media screen and (min-width:440px) and (max-width:527px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 10px 1fr 0px;
+        width: 100%;
+        padding: 5px 0px;
+        background: #6080f4;
+
+
+    }
+    .school-name h1{
+        font-size: 1.5rem;
+        margin:5px 0px;
+        color:#e9ec36;
+
+        
+    }
+    .school-address{
+        font-size:0.7rem;
+
+    }
+    
+
+}
+
+@media screen and (max-width:439px){
+    .school_info{
+        display: grid;
+        grid-template-columns: 0px 1fr 0px;
+        width: 100%;
+        padding: 0px 0px;
+        background: #6080f4;
+
+
+    }
+    .school-name h1{
+        font-size: 1rem;
+        margin:3px 0px;
+        color:#e9ec36;
+
+        
+    }
+    .school-address{
+        font-size:0.6rem;
+
+    }
+    
+}

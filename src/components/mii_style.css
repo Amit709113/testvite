@@ -1,0 +1,18 @@
+.most-imp-info{
+    background-color: #8aafff;
+    display: grid;
+    height: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.info{
+    display: flex;
+    grid-column: 2/3;
+    justify-content: start;
+    align-items: center;
+    
+
+}
+.info marquee a{
+    color:black;
+}
