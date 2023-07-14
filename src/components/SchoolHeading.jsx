@@ -7,7 +7,7 @@ const SchoolHeading = () => {
     <div className="school_info">
         <div className='container-school-heading'>
                 <div className="logo-container">
-                    <img src={logo} alt="logo" className='logo-image' width={100} />
+                    <img src={logo} alt="logo" className='logo-image' />
                 </div>
 
                 <div className="school-detail">

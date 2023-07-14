@@ -54,6 +54,20 @@
 .school-address{
     margin-bottom:1rem;
 }
+.logo-image{
+    width:100px;
+    border-radius: 12px ;
+    filter:brightness(1.5);
+}
+
+@media screen and (max-width:459px){
+    .logo-image{
+        margin-top:6px;
+        width:75px;
+        
+    }
+    
+}
 
 @media screen and (min-width:300px) and (max-width:374px){
     .school_info{
@@ -111,23 +125,17 @@
         width: 100%;
         padding: 0px 0px;
         background: #6080f4;
-
-
     }
     .school-name h1{
         font-size: 1.4rem;
         margin:3px 0px;
-        color:#e9ec36;
-
-        
+        color:#e9ec36;        
     }
     .school-address{
         font-size:0.6rem;
-
     }
     
 }
-
 
 @media screen and (min-width:440px) and (max-width:527px){
     .school_info{
@@ -137,21 +145,17 @@
         padding: 5px 0px;
         background: #6080f4;
 
-
     }
     .school-name h1{
         font-size: 1.5rem;
         margin:5px 0px;
         color:#e9ec36;
-
         
     }
     .school-address{
         font-size:0.7rem;
 
     }
-    
-
 }
 
 @media screen and (min-width:527px) and (max-width:680px){
