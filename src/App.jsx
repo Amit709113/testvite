@@ -7,6 +7,8 @@ import VlogList from './components/VlogList.jsx';
 import Topper from './components/Topper';
 import Testimonial from './components/Testimonial';
 import ContectInfo from './components/ContectInfo';
+import Footer from './components/Footer';
+
 import data from './data/topperData.json';
 import artical from './data/vlogData.json'
 
@@ -25,6 +27,7 @@ function App() {
       <Topper />
       <Testimonial testimonialData={data} />
       <ContectInfo />
+      <Footer />
     </>
   )
 }
