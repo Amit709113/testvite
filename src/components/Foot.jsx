@@ -15,16 +15,19 @@ const Foot = () => {
                         <div className="link-section">
                             <ul>
                                 <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Home</a>
+                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Home</a>
+                                </li>
+                                <li>
+                                    <a href="https://jac.jharkhand.gov.in/jac/"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> JAC Official Site</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.jacresults.com/"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> JAC Results</a>
                                 </li>
                                 <li>
                                     <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> About Us</a>
                                 </li>
                                 <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Admission</a>
-                                </li>
-                                <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Holyday List</a>
+                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Admission</a>
                                 </li>
                             </ul>
                         </div>

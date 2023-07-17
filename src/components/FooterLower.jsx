@@ -10,8 +10,8 @@ const FooterLower = () => {
                     <div className="btm-text">© 2023. Copyrights Divine Public Sch0l. All Right Resered</div>
                 </div>
                 <div className='designer'>
-                    <div className="btm-text">Website Designed by: 
-                    <a href="https://github.com/Amit709113" target='_black' >amit and 2k18 batchmates</a></div>
+                    <div className="btm-text">Website Designed  by: 
+                    <a href="https://github.com/Amit709113" target='_black' >The First and Unique Batch Of School</a></div>
                 </div>
             </div>
             
