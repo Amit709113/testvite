@@ -26,8 +26,8 @@ const Carousel = ({data}) => {
     <div className='carousel'>
       <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
         {
-          data.map((item,idx)=>{
-              return <img src={imgArray[idx]} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />
+          data.map((item,idx)=>{  {/*one change can do every think */}
+              return <img src={item.src} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />  
           })
         }
                 <div className="img-text">Image Description </div>
