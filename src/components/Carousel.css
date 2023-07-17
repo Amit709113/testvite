@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     /* justify-content: center; */
+    color:#fff;
     width:100vw;
    height: 24rem;
    
@@ -62,3 +63,32 @@
  .indicator-inactive{
    background-color: gray;
  }
+
+ 
+ .img-text{
+  position: absolute;
+  max-width:60%;
+  padding:6px 30px;
+   background:rgba(0, 0, 0, 0.6);
+   font-size:1.0rem;
+   bottom: 18px;
+   left: 0px;
+   border-radius: 0 12px 12px 0;
+   transition: 0.3s ease all;
+}
+
+@media only screen and (min-device-width: 768px){
+  .img-text {
+      font-size: 16px !important;
+      bottom: 20px !important;
+  }
+
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+ .img-text {
+      font-size: 9px !important;
+      bottom: 10px !important;
+ }
+
+}

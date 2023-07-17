@@ -2,23 +2,29 @@
     "slides":[
         {
             "src":"src/assets/gate.jpg",
-            "alt":"image 1 enterence"
+            "alt":"image 1 enterence",
+            "comment":"classroom"
         },
         {
             "src":"src/assets/office.jpg",
-            "alt":"image 2 office"
+            "alt":"image 2 office",
+            "comment":"Enterence"
+            
         },
         {
             "src":"src/assets/cca.jpg",
-            "alt":"image 3 cca"
+            "alt":"image 3 cca",
+            "comment":"principle massage : ''"
         },
         {
             "src":"src/assets/infra.jpg",
-            "alt":"image 4 infra"
+            "alt":"image 4 infra",
+            "comment":"sports"
         },
         {
             "src":"src/assets/schoolname.jpg",
-            "alt":"image 3 main-building"
+            "alt":"image 3 main-building",
+            "comment":"infrastructure"
         }
     ]
     

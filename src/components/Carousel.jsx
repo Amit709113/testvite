@@ -30,6 +30,7 @@ const Carousel = ({data}) => {
               return <img src={imgArray[idx]} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />
           })
         }
+                <div className="img-text">Image Description </div>
       <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide}/>
       <span className="indicators">
           {data.map((_,idx)=>{
