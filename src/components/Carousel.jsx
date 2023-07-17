@@ -3,11 +3,11 @@ import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
 
 import './Carousel.css';
 
-import cimgsrc0 from '../assets/infra.jpg'
-import cimgsrc1 from '../assets/gate.jpg'
-import cimgsrc2 from '../assets/office.jpg'
-import cimgsrc3 from '../assets/cca.jpg'
-import cimgsrc4 from '../assets/schoolname.jpg'
+// import cimgsrc0 from '../assets/infra.jpg'
+// import cimgsrc1 from '../assets/gate.jpg'
+// import cimgsrc2 from '../assets/office.jpg'
+// import cimgsrc3 from '../assets/cca.jpg'
+// import cimgsrc4 from '../assets/schoolname.jpg'
 
 const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
 
