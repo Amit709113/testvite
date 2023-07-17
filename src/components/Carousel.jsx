@@ -9,7 +9,7 @@ import './Carousel.css';
 // import cimgsrc3 from '../assets/cca.jpg'
 // import cimgsrc4 from '../assets/schoolname.jpg'
 
-const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
+// const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
 
 const Carousel = ({data}) => {
   const [slide,setSlides]=useState(0);
