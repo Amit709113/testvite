@@ -3,13 +3,13 @@ import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
 
 import './Carousel.css';
 
-// import cimgsrc0 from '../assets/infra.jpg'
-// import cimgsrc1 from '../assets/gate.jpg'
-// import cimgsrc2 from '../assets/office.jpg'
-// import cimgsrc3 from '../assets/cca.jpg'
-// import cimgsrc4 from '../assets/schoolname.jpg'
+import cimgsrc0 from '../assets/infra.jpg'
+import cimgsrc1 from '../assets/gate.jpg'
+import cimgsrc2 from '../assets/office.jpg'
+import cimgsrc3 from '../assets/cca.jpg'
+import cimgsrc4 from '../assets/schoolname.jpg'
 
-// const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
+const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
 
 const Carousel = ({data}) => {
   const [slide,setSlides]=useState(0);
@@ -27,7 +27,13 @@ const Carousel = ({data}) => {
       <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
         {
           data.map((item,idx)=>{  {/*one change can do every think */}
-              return <img src={item.src} alt={item.alt} key={idx} className={slide===idx?"slides":'slides slides-hidden'} />  
+              return <img 
+                src={item.src} 
+                alt={item.alt}  
+                key={idx} 
+                className={slide===idx?"slides":'slides slides-hidden'} 
+                loading='lazy' 
+              />  
           })
         }
                 <div className="img-text">Image Description </div>
