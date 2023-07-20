@@ -40,7 +40,7 @@ const Navbar = () =>{
                 setShowMediaIcon(!showMediaIcon)
             }}>
                 {/* <i className='fas fa-bars'></i> */}
-                <IoMenu style={{fontSize:'2.2rem'}} />
+                <IoMenu style={{fontSize:'2.2rem',color:'#333'}} />
             </div>
             
 

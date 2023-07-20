@@ -26,9 +26,9 @@ const Carousel = ({data}) => {
     <div className='carousel'>
       <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
         {
-          data.map((item,idx)=>{  {/*one change can do every think */}
+          data.map((item,idx)=>{  
               return <img 
-                src={item.src} 
+                src={item.src} /*one change can do every think */
                 alt={item.alt}  
                 key={idx} 
                 className={slide===idx?"slides":'slides slides-hidden'} 
