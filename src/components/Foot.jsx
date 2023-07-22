@@ -104,13 +104,13 @@ const JoinUs=() => {
                             <div className="link-section">
                                 <ul>
                                     <li>
-                                    <span  href="#"><FaLocationDot style={{ fontSize:"1.5rem",marginRight:"6px"}} /> Chandlaso Road, Chandlaso, Kuru-835213,Lohardaga,Jharkhand</span>
+                                    <span  href="#"><FaLocationDot style={{ fontSize:"1.3rem",marginRight:"6px"}} /> Chandlaso Road, Chandlaso, Kuru-835213,Lohardaga,Jharkhand</span>
                                     </li>
                                     <li>
-                                        <a href="#"><BsFillTelephoneFill style={{fontSize:"1.5rem",marginTop:"14px"}} /> 0123456789,1234567890</a>
+                                        <a href="#"><BsFillTelephoneFill style={{fontSize:"1.3rem",marginTop:"14px"}} /> 0123456789,1234567890</a>
                                     </li>
                                     <li>
-                                    <a href="#"><MdEmail style={{fontSize:"1.6rem",margin:"14px 0 0 0"}}  /> dps@gmail.com</a>
+                                    <a href="#"><MdEmail style={{fontSize:"1.4rem",margin:"14px 0 0 0"}}  /> dps@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>
