@@ -4,8 +4,7 @@ import MostImpInfo from '../components/MostImpInfo';
 import SchoolHeading from '../components/SchoolHeading';
 import Navbar from '../components/Navbar';
 
-import AboutSrc from './comp_about/AboutSrc';
-// import ContentPageHeading from '../components/contentPageHeading';
+import AboutMain from './comp_about/AboutMain';
 
 import Footer from '../components/Footer';
 
@@ -19,8 +18,7 @@ function AboutApp() {
         <MostImpInfo />
         <SchoolHeading />
         <Navbar />
-        {/* <ContentPageHeading obj={obj.about}/> */}
-        <AboutSrc obj={obj.about} />
+        <AboutMain data={obj.about} />
         <Footer />
 
     </>
