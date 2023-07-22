@@ -2,18 +2,18 @@ import React from 'react';
 import MostImpInfo from './components/MostImpInfo';
 import SchoolHeading from './components/SchoolHeading';
 import Navbar from './components/Navbar';
-// import CarouselSlider from './components/CarouselSlider';
-// import VlogList from './components/VlogList.jsx';
-// import Topper from './components/Topper';
-// import Testimonial from './components/Testimonial';
-// import ContectInfo from './components/ContectInfo';
+import CarouselSlider from './components/CarouselSlider';
+import VlogList from './components/VlogList.jsx';
+import Topper from './components/Topper';
+import Testimonial from './components/Testimonial';
+import ContectInfo from './components/ContectInfo';
 import Footer from './components/Footer';
-import obj from './data/AboutMainData.json'
-// import data from './data/topperData.json';
-// import artical from './data/vlogData.json'
+import data from './data/topperData.json';
+import artical from './data/vlogData.json'
 
 import './App.css'
-import ContentPageHeading from './components/contentPageHeading';
+// import obj from './data/AboutMainData.json'
+// import ContentPageHeading from './components/contentPageHeading';
 
 
 function App() {
@@ -23,12 +23,12 @@ function App() {
       <MostImpInfo />
       <SchoolHeading/>
       <Navbar />
-      <ContentPageHeading obj={obj.about}/>
-      {/* <CarouselSlider /> */}
-      {/* <VlogList data={artical.articals}/> */}
-      {/* <Topper /> */}
-      {/* <Testimonial testimonialData={data} /> */}
-      {/* <ContectInfo /> */}
+      {/* <ContentPageHeading obj={obj.about}/> */}
+      <CarouselSlider />
+      <VlogList data={artical.articals}/>
+      <Topper />
+      <Testimonial testimonialData={data} />
+      <ContectInfo />
       <Footer />
     </>
   )
