@@ -84,7 +84,7 @@
 
     }
     .menu-link-desktop.mobile{
-        left:-500px;
+        left:-600px;
         transition: 1.0s cubic-bezier(0.4, 0, 1, 1);
     }
     .menu-link-desktop.desktop{

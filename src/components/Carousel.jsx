@@ -38,17 +38,19 @@ const Carousel = ({data}) => {
         }
                 <div className="img-text">Image Description </div>
       <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide}/>
-      <span className="indicators">
-          {data.map((_,idx)=>{
-            return (
-            <button 
-              key={idx} 
-              onClick={()=>setSlides(idx)} 
-              className={slide===idx?'indicator':"indicator indicator-inactive"}>
-            </button>
-            )
-          })}
-      </span>
+      <div className='img-text2'>
+        <span className="indicators">
+            {data.map((_,idx)=>{
+              return (
+              <button 
+                key={idx} 
+                onClick={()=>setSlides(idx)} 
+                className={slide===idx?'indicator':"indicator indicator-inactive"}>
+              </button>
+              )
+            })}
+        </span>
+      </div>
     </div>
     
     </>
