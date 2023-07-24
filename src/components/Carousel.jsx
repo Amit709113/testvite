@@ -32,7 +32,7 @@ const Carousel = ({data}) => {
                 alt={item.alt}  
                 key={idx} 
                 className={slide===idx?"slides":'slides slides-hidden'} 
-                loading='lazy' 
+                loading={idx===0 ? 'eager':'lazy'} 
               />  
           })
         }

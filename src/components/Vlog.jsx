@@ -23,7 +23,7 @@ const Vlog = ({title,des,logoKey}) => {
                 <p className='description'>
                     {des}    
                 </p>
-                <button className="button">View More</button>
+                <a href="testvite/about/"><button className="button">View More</button></a>
             </div>
         </div> 
     </>
