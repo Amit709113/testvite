@@ -3,22 +3,26 @@
         {
             "title":"Our Strength ",
             "description":"Divine Public School ensures acedemic excellence, character building and leadership skills which help allround development of a student.  Easily accessible location for families to come the well trained and professional staffs.  ",
-            "key":0
+            "key":0,
+            "hrefbtn":"/testvite/about/"
         },
         {
             "title":"Why DPS",
             "description":"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus facere error vitae nam exercitationem tenetur at quisquam minima. Quis consequuntur quas perferendis ipsum animi molestiae mollitia sit! Voluptatem praesentium iusto quas, aperiam rem id quos, similique aliquam reprehenderit optio iure.",
-            "key":1
+            "key":1,
+            "hrefbtn":"/testvite/about/"
         },
         {
             "title":"Academic",
             "description":" Our School is renowned for its outstanding academic offerings, acknowledged teachers, and supportive environment, cultivates a desire to study in students, enabling them to succeed both academically and personally.",
-            "key":2
+            "key":2,
+            "hrefbtn":"/testvite/about/"
         },
         {
             "title":"Activity",
             "description":"   Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus facere error vitae nam exercitationem tenetur at quisquam minima. Quis consequuntur quas perferendis ipsum animi molestiae mollitia sit! Voluptatem praesentium iusto quas, aperiam rem id quos, similique aliquam reprehenderit optio iure.",
-            "key":3
+            "key":3,
+            "hrefbtn":"/testvite/about/"
         }
         
     ]    

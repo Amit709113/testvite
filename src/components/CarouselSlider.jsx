@@ -6,10 +6,7 @@ const CarouselSlider=()=>{
 
     return(
         <>
-           <div style={{display:'flex',
-                  justifyContent:'center',
-                  alignItems:'center'
-                }}>
+           <div>
                 <Carousel data={slide.slides} />
             </div>
         </>
