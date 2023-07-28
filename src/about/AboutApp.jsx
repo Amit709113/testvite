@@ -3,7 +3,6 @@ import React from 'react';
 import MostImpInfo from '../components/MostImpInfo';
 import SchoolHeading from '../components/SchoolHeading';
 
-// import Navbar from '../components/Navbar';
 import NewNavbar from '../components/NewNavbar';
 
 import AboutMain from './comp_about/AboutMain';

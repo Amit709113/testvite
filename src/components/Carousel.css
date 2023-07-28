@@ -25,6 +25,7 @@
   color: #ffffff82;
   filter:drop-shadow(0 0 5px #555);
   cursor: pointer;
+  z-index:100;
 }
 #section-carousel .leftArrow{
   left:1rem;
@@ -86,13 +87,13 @@
   min-width:20px;
 }
 #section-carousel .carousel-description{
-  max-width:60%;
+  max-width:60% !important;
   text-align: left;
-  padding:6px 30px;
+  padding:6px 0px 6px 30px;
   background:rgba(0, 0, 0, 0.6);
-  /* font-size:0.9rem; */
+  font-size:1.2rem;
   border-radius: 0 12px 12px 0;
-  color:rgb(141, 115, 115);
+  color:#fff;
   transition: 0.3s ease all;
 }
 #section-carousel .carousel-description.inactive{
@@ -102,6 +103,7 @@
 }
 @media  only screen and (min-device-width: 320px) and (max-device-width: 480px){
   #section-carouosel .carousel-description {
+      max-width: 80%;
       font-size: 9px !important;
       
   }
