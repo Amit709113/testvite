@@ -1,61 +1,88 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+const CAROUSEL_DELAY = 3000;
+
 import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
+import  "./Carousel.css";
 
-import './Carousel.css';
-
-// import cimgsrc0 from '../assets/infra.jpg'
-// import cimgsrc1 from '../assets/gate.jpg'
-// import cimgsrc2 from '../assets/office.jpg'
-// import cimgsrc3 from '../assets/cca.jpg'
-// import cimgsrc4 from '../assets/schoolname.jpg'
-
-// const imgArray=[cimgsrc0,cimgsrc1,cimgsrc2,cimgsrc3,cimgsrc4]
-
-const Carousel = ({data}) => {
-  const [slide,setSlides]=useState(0);
-
+const Carousel = (props) => {
+  const { carouselData } = props;
+  const carouselTimeoutRef = useRef(null);
+  const [carouselDelay, setCarouselDelay] = useState(100);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   const nextSlide=()=>{
-    setSlides((slide+1)%data.length);
-  }
-  const prevSlide=()=>{
-    setSlides(slide===0?data.length-1:slide-1);
+    setCarouselIndex(carouselIndex===carouselData.length-1?0:carouselIndex+1);
   }
 
-  return (<>
-    <div className='carousel'>
-      <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
+  const prevSlide=()=>{
+    setCarouselIndex(carouselIndex===0?carouselData.length - 1:carouselIndex-1);
+
+  }
+  const setSlide=((idx)=>{setCarouselIndex(idx)})
+  useEffect(() => setCarouselDelay(CAROUSEL_DELAY), []);
+
+  useEffect(() => {
+    carouselTimeoutRef.current = setTimeout(
+      () =>
+        setCarouselIndex((prevIndex) =>
+          prevIndex === props.carouselData.length - 1 ? 0 : prevIndex + 1
+        ),
+      carouselDelay
+    );
+
+    return () => clearTimeout(carouselTimeoutRef.current);
+  }, [props.carouselData.length, carouselIndex, carouselDelay]);
+
+
+  return (
+    <div  id="section-carousel" className="section-carousel-main">
+      <div className="carousel-sub-div" >
         {
-          data.map((item,idx)=>{  
-              return <img 
-                src={item.src} /*one change can do every think */
-                alt={item.alt}  
-                key={idx} 
-                className={slide===idx?"slides":'slides slides-hidden'} 
-                loading={idx===0 ? 'eager':'lazy'} 
-              />  
-          })
-        }
-                <div className="img-text">Image Description </div>
-      <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide}/>
-      <div className='img-text2'>
-        <span className="indicators">
-            {data.map((_,idx)=>{
+          carouselData.map((el, i) => {
+            return (
+              <>
+                <div
+                  key={i}
+                  className={carouselIndex===i?"image-div": `image-div not-visible-carousel`}
+                  style={{background:'#aaaaaf'}}
+                  >
+                  <img src={el.src} alt="default" className="image"  />
+
+                </div>
+              </>
+            );
+        })}
+        <BsArrowLeftCircleFill className={`arrow leftArrow`} onClick={prevSlide}/>
+        <BsArrowRightCircleFill className={`arrow rightArrow`} onClick={nextSlide}/>
+        
+        <div className="indicator-btn-parent">
+          <span className="indicators">
+            {carouselData.map((_,idx)=>{
               return (
               <button 
                 key={idx} 
-                onClick={()=>setSlides(idx)} 
-                className={slide===idx?'indicator':"indicator indicator-inactive"}>
+                onClick={()=>setSlide(idx)} 
+                className={carouselIndex===idx?'indicator':"indicator indicator-inactive"}>
               </button>
               )
             })}
-        </span>
+          </span>
+        </div>
+
+        <div className="desc-bar-parent">
+            <div className="description-bar">
+              {
+                carouselData.map((item,idx)=>{
+                  return(
+                    <div className={carouselIndex===idx?"carousel-description":"carousel-description inactive"}>{item.comment}</div>
+                  )
+                })
+              }
+            </div>
+        </div>
       </div>
     </div>
-    
-    </>
-    
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;

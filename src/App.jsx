@@ -1,8 +1,6 @@
 import React from 'react';
 import MostImpInfo from './components/MostImpInfo';
 import SchoolHeading from './components/SchoolHeading';
-// import Navbar from './components/Navbar';
-import CarouselSlider from './components/CarouselSlider';
 import VlogList from './components/VlogList.jsx';
 import Topper from './components/Topper';
 import Testimonial from './components/Testimonial';
@@ -11,10 +9,11 @@ import Footer from './components/Footer';
 import data from './data/topperData.json';
 import artical from './data/vlogData.json'
 
+import slide from './data/carouselData.json'
+
 import './App.css'
 import NewNavbar from './components/NewNavbar';
-// import obj from './data/AboutMainData.json'
-// import ContentPageHeading from './components/contentPageHeading';
+import Carousel from './components/Carousel';
 
 
 function App() {
@@ -23,10 +22,8 @@ function App() {
 
       <MostImpInfo />
       <SchoolHeading/>
-      {/* <Navbar /> */}
       <NewNavbar />
-      {/* <ContentPageHeading obj={obj.about}/> */}
-      <CarouselSlider />
+      <Carousel carouselData={slide.slides}/>
       <VlogList data={artical.articals}/>
       <Topper />
       <Testimonial testimonialData={data} />
