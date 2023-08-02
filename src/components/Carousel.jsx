@@ -46,7 +46,7 @@ const Carousel = (props) => {
                   className={carouselIndex===i?"image-div": `image-div not-visible-carousel`}
                   style={{background:'#aaaaaf'}}
                   >
-                  <img src={el.src} alt="default" className="image"  />
+                  <img src={el.src} alt={el.alt} className="image" loading="eager" />
 
                 </div>
               </>
