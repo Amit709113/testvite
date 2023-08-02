@@ -2,13 +2,13 @@
     "articals":[
         {
             "title":"Our Strength ",
-            "description":"Divine Public School ensures acedemic excellence, character building and leadership skills which help allround development of a student.  Easily accessible location for families to come the well trained and professional staffs.  ",
+            "description":"Our school encourages students participating in extracurricular activities and it is a great way to widen and broaden students’ social circle, expand their interests, and build leadership skills. Our school promotes students’ involvement in school extracurricular activities which leads to positive long-term outcomes.",
             "key":0,
-            "hrefbtn":"/testvite/about/"
+            "hrefbtn":"/testvite/ourstrength/"
         },
         {
             "title":"Why DPS",
-            "description":"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus facere error vitae nam exercitationem tenetur at quisquam minima. Quis consequuntur quas perferendis ipsum animi molestiae mollitia sit! Voluptatem praesentium iusto quas, aperiam rem id quos, similique aliquam reprehenderit optio iure.",
+            "description":"Divine Public School ensures acedemic excellence, character building and leadership skills which help allround development of a student.  Easily accessible location for families to come the well trained and professional staffs.  ",
             "key":1,
             "hrefbtn":"/testvite/about/"
         },

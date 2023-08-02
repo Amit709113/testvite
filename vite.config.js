@@ -16,7 +16,8 @@ export default defineConfig({
     rollupOptions:{
       input:{
         main:resolve(root,'index.html'),
-        about:resolve(root,'about','index.html')
+        about:resolve(root,'about','index.html'),
+        ourstrength:resolve(root,'outstrength','index.html')
       }
     }
   }

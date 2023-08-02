@@ -14,7 +14,7 @@ const ContentPageHeading = ({obj}) => {
   const histroyBgStyle={
     backgroundImage: `url(${bgimgsrc})`,
     backgroundRepeat:' no-repeat',
-    backgroundPosition: `0% 70%`,
+    backgroundPosition: `50% 70%`,/*0 70 */
     backgroundSize: 'cover',
     padding:'60px 0' ,
     width:'100%',
