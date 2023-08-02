@@ -7,8 +7,6 @@ const NewNavbar = () => {
 
     const[showNavbarForMobile,setShowNavbarForMobile]=useState(false);
 
-    
-
   return (
     <>
         <div id="section-menu-header" className=' sticky section-menu-header-class'>

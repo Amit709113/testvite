@@ -11,7 +11,7 @@ const FooterLower = () => {
                 </div>
                 <div className='designer'>
                     <div className="btm-text" >Website Designed  by: 
-                    <a href="https://github.com/Amit709113" target='_black' >The First and Unique Batch Of School</a></div>
+                    <a href="https://github.com/Amit709113" target='_black' >Amit and Team</a></div>
                 </div>
             </div>
             
