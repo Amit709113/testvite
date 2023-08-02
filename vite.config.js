@@ -17,7 +17,7 @@ export default defineConfig({
       input:{
         main:resolve(root,'index.html'),
         about:resolve(root,'about','index.html'),
-        ourstrength:resolve(root,'outstrength','index.html')
+        ourstrength:resolve(root,'ourstrength','index.html')
       }
     }
   }
