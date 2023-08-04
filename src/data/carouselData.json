@@ -2,8 +2,8 @@
     "slides":[
         {   
             "src":"http://drive.google.com/uc?export=view&id=1TaDmqO9i5qj-DUEbRUoJ5iW4QjfdTzbD",
-            "alt":"image 1 class-room",
-            "comment":"dolorum sint eaque dolore? Tenetur eveniet, repellendus, quisquam libero alias temporibus et harum fugiat porro dolor voluptatum qui minus iste. Accusantium animi minus suscipit voluptatem."
+            "alt":"gate",
+            "comment":"Welcome."
         },
         {
             "src":"http://drive.google.com/uc?export=view&id=1MWYBZ6P9jJs-o8gAwUBmBLqVlY1jyxed",
@@ -12,18 +12,18 @@
         },
         {
             "src":"http://drive.google.com/uc?export=view&id=1TWwpk9Ql7c3QrRBwhbgL2xi6t4TX58O5",
-            "alt":"image 3 office",
-            "comment":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, ipsam soluta! At animi ducimus natus, itaque pariatur facilis, illo corrupti neque maiores dolore ab, veritatis reprehenderit. Nisi perferendis repudiandae id eum, natus error neque ipsum assumenda voluptates tempore. Fugiat, aliquid." 
+            "alt":"office",
+            "comment":"office" 
         },
         {
             "src":"http://drive.google.com/uc?export=view&id=1TaD5s4QB_a6lwsliZYtC1dgIt-WQVtBt",
-            "alt":"image 4 infra",
-            "comment":"building1+ nesciunt  deserunt aspernatur beataemodi laborum autem eius praesentium repudiandae? Quaerat consectetur quae quis."
+            "alt":"building",
+            "comment":"building "
         },
         {
             "src":"http://drive.google.com/uc?export=view&id=1VuvR0xxTRWIFzM1cSUXykSdwfgEilS5F",
-            "alt":"image 5 cca",
-            "comment":"co-curricular-activity winner '🙌🏽🙌🏽"
+            "alt":"assembly",
+            "comment":"Morning Assembly"
 
         }
     ]

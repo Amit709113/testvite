@@ -6,7 +6,7 @@
 }
 .sticky{
     position: sticky;
-    top:0px;
+    top:-1px;
     /* background: transparent; */
     width: 100%;
     z-index: 999;

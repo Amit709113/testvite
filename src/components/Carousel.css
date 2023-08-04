@@ -12,9 +12,8 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  height: 400px;
+  height: 450px;  /* */
 }
-
 #section-carousel .arrow{
   position:absolute;
   width:2rem;
@@ -33,38 +32,28 @@
 #section-carousel .rightArrow{
   right:1rem;
 }
-
 #section-carousel .image-div {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
 }
-
-
 #section-carousel .not-visible-carousel {
   opacity: 0;
   transition: 1s;
 }
-
 #section-carousel .image{
-  /* border-radius: 10px; */
-  /* border:2px solid #eee; */
   width:100%;
   height: 450px;
   object-fit: fill;
 } 
-
 #section-carousel .indicator-btn-parent{
   position: absolute;
   bottom: 1rem;
-  /* background-color: rgb(54, 101, 85); */
   z-index: 0;
   width:100%;
 }
-
 #section-carousel .indicators,.desc-bar{
   margin:auto;
 }
-
 #section-carousel .indicator{
   background-color: #fff;
   height: 0.5rem;
@@ -103,10 +92,8 @@
 }
 @media  only screen and (min-device-width: 320px) and (max-device-width: 480px){
   #section-carouosel .carousel-description {
-      max-width: 80%;
-      font-size: 9px !important;
-      
+    max-width: 80%;
+    font-size: 9px !important;
   }
-
 }
  

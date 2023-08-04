@@ -14,6 +14,10 @@ import slide from './data/carouselData.json'
 import './App.css'
 import NewNavbar from './components/NewNavbar';
 import Carousel from './components/Carousel';
+import EventBox from './components/EventBox'
+import NoticeBox from './components/NoticeBox'
+import noticeData from './data/noticeData.json'; 
+import eventData from './data/eventData.json'
 
 
 function App() {
@@ -24,6 +28,10 @@ function App() {
       <SchoolHeading/>
       <NewNavbar />
       <Carousel carouselData={slide.slides}/>
+      <div className='notice-wrapper'>
+        <NoticeBox notice={noticeData.noticeBoard}/>
+        <EventBox event={eventData.eventData}/>
+      </div>
       <VlogList data={artical.articals}/>
       <Topper />
       <Testimonial testimonialData={data} />
