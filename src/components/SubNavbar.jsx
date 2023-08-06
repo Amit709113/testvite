@@ -95,7 +95,7 @@ const SubNavbar = () => {
             </li>
 
             <li className="nav-item">
-                <a href="#" className="nav-link">
+                <a href="./gallery/" className="nav-link">
                     Gallery
                 </a>
             </li>
