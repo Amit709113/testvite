@@ -80,10 +80,13 @@
 .notice-title a:hover::after{
     transform: scale(1);
 }
-
+@media (max-width:991px) {
+    #notice-section-container marquee{
+        max-height: 350px;
+    }
+}
 @media (min-width:992px) {
     #notice-section-container{
         width:49.75%;
     }
-    
 }

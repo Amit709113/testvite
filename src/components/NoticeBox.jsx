@@ -10,11 +10,11 @@ const NoticeBox = (props) => {
       <div id="notice-section-container">
         <div  className='notice-content-section'>
          <div className='notice-board-heading'>Notice Board</div>
-         <span></span>
          <marquee
+            
             direction="up" 
-            scrollAmount="2" 
-            scrollDelay="2"   
+            scrollAmount="6" 
+            scrollDelay="6"   
          >
         {
           
