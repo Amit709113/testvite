@@ -121,3 +121,14 @@
  color:#fff;
  cursor: pointer;
 }
+.model.open figcaption {
+ position: fixed;
+ bottom: 50px;
+ left: 10px;
+ padding:5px;
+ background-color: rgba(0,0,0,0.4);
+ color:#fff;
+ cursor: pointer;
+
+}
+

@@ -2,41 +2,55 @@ import React, { useState } from 'react'
 import {IoClose} from "react-icons/io5";
 import './Gallery.css'
 
-
-
-
 const Gallery = ({galleryData}) => {
+    const [itemData,setItemData]=useState(galleryData);
     const [model,setModel] =useState(false);
-    const[tempImgSrc,setTempImgSrc]=useState('');
-    const getImg=(imgSrc)=>{
-        setTempImgSrc(imgSrc);
+    const[tempImg,setTempImg]=useState('');
+    const getImg=({imgSrc,caption})=>{
+        setTempImg(()=>{
+            return ({
+                imgSrc:imgSrc,
+                caption:caption
+            })
+        });
         setModel(true);
     }
+    const filterItem = (categ)=>{
+        const updatedItem =  galleryData.filter((item)=>{
+            return item.category===categ;
+        })
+        setItemData(updatedItem);
+    }
+
+
   return (
     <>
         
         <div id="gallery-section">
         <div className={model?"model open":"model"}>
-            <img src={tempImgSrc} alt="model" />
+            <figure>
+                <img src={tempImg.imgSrc} alt={tempImg.caption} />
+                <figcaption>{tempImg.caption} </figcaption>
+            </figure>
             <IoClose onClick={()=>setModel(false)}/>
         </div>
 
             <h1 className='heading'>Gallery</h1>
             <div className='gallery-category-section'>
-                <button onClick={()=>getAllPhoto} >All</button>
-                <button onClick={()=>getBefore22}>before 2022</button>
-                <button onClick={()=>getRep22}>2022 republic day</button>
-                <button onClick={()=>getFarewell23}>2023</button>
-                <button onClick={()=>getOthers}>Others</button>
+                <button onClick={()=>setItemData(galleryData)} >All</button>
+                <button onClick={()=>filterItem('before_2022')}>before 2022</button>
+                <button onClick={()=>filterItem('republic_day_2022')}>republic day 2022</button>
+                <button onClick={()=>filterItem('_2023')}>2023</button>
+                <button onClick={()=>filterItem('others')}>Others</button>
             </div>
             
             <div className="gallery-main">
                 {
-                    galleryData.map(({category,id,imgSrc,alt},idx)=>{
-                        return (<div className='pics' key={idx} onClick={()=>getImg(imgSrc)}>
-                                    <img src={imgSrc} alt={alt} className='gallery-image' />
+                    itemData.map(({id,category,imgSrc,alt,caption},idx)=>{
+                        return (<div className='pics' key={idx} onClick={()=>getImg({imgSrc,caption})}>
+                                    <img src={imgSrc} alt={caption + " - " +id} className='gallery-image' />
 
-                            </div>)
+                                </div>)
                         
                     })
                 }

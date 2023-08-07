@@ -2,98 +2,98 @@
     "galleryData":[
         
         {
-            "category":"building",
-            "id":"9",
+            "id":"1",
+            "category":"_2023",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1VuptCmVtdxhs5RR-p8sVv3XUcSKjs2_C",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"Taekwondo Training"
         },
         {
-            "category":"building",
-            "id":"5",
+            "id":"2",
+            "category":"before_2022",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1U7d9IW05P3HGTuAiPd-FlZRlgZWdchhO",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"Morning Exercise"
         },
         {
-            "category":"building",
-            "id":"10",
+            "id":"3",
+            "category":"_2023",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1UFHPvhiGwgcV902y6OWK7KjLe8pNjDqI",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"Winners 🎉"
         },
         {
-            "category":"building",
-            "id":"11",
+            "id":"4",
+            "category":"before_2022",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1Tt5K-uILv2UtXzhsCByclUYnQH5HxdUp",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"Winners 🎉"
         },
         {
-            "category":"building",
-            "id":"12",
+            "id":"5",
+            "category":"_2023",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1ThGijIZba-7_DDBf7gDUoaMNcy9sgZzR",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"Yoga Day"
         },    
 
         {
-            "category":"news",
-            "id":"0",
+            "id":"6",
+            "category":"before_2022",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1UIviW0kP5oXJ8Yz8lfXnlK_T77EDiwK5",
-            "alt":"default0",
-            "imgTitle":"infra"
+            "alt":"gallery-image",
+            "caption":"Taekwondo Demonstration"
         },
         {
-            "category":"building",
-            "id":"1",
+            "id":"7",
+            "category":"others",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1MbRpLviJevdezynEEz87xUC-a80mNLZ2",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"School at Multiple Stages"
         },
         {
-            "category":"news",
-            "id":"2",
+            "id":"8",
+            "category":"_2023",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TaD5s4QB_a6lwsliZYtC1dgIt-WQVtBt",
-            "alt":"default0",
-            "imgTitle":"infra"
+            "alt":"gallery-image",
+            "caption":"Our first building"
         },
         {
-            "category":"building",
-            "id":"3",
+            "id":"9",
+            "category":"_2023",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TZnPzb4qLgMuccDCFKrqJKIY5DBfxns9",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"main building"
         },
         {
-            "category":"news",
-            "id":"4",
+            "id":"10",
+            "category":"before_2022",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TzlsU2oHsk3P7OV-VxqPbHwisK2HnM6H",
-            "alt":"default0",
-            "imgTitle":"infra"
+            "alt":"gallery-image",
+            "caption":"morning assembly"
         },
         
         {
-            "category":"building",
-            "id":"6",
+            "id":"11",
+            "category":"others",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TiaqeIyb1a7q3NmPydwwdyJf0ORwHQmX",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"male facalities "
         },
         {
-            "category":"building",
-            "id":"7",
+            "id":"12",
+            "category":"others",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TWwpk9Ql7c3QrRBwhbgL2xi6t4TX58O5",
-            "alt":"default1",
-            "imgTitle":"gate"
+            "alt":"gallery-image",
+            "caption":"our office"
         }
         ,
         {
-            "category":"building",
-            "id":"8",
+            "id":"13",
+            "category":"republic_day_2022",
             "imgSrc":"http://drive.google.com/uc?export=view&id=1TupAJ5P4n_lVRTlVAq_bNN06fxXeRCJN",
-           "alt":"default1",
-            "imgTitle":"gate"
+           "alt":"gallery-image",
+            "caption":"Teacher's day 2022"
         }
     ]
 }
