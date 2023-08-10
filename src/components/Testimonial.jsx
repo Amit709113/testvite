@@ -1,13 +1,13 @@
 import styles from "./Testimonial.module.css";
 import React, { useEffect, useRef, useState } from "react";
-import imgSrc0 from '../assets/khushi.jpg';
-import imgSrc1 from '../assets/preity.jpg';
-import imgSrc2 from '../assets/ayush.jpg';
-import imgSrc3 from '../assets/aryan.jpg';
-import imgSrc4 from '../assets/anjali.jpg';
-import imgSrc5 from '../assets/pawan.jpg';
+// import imgSrc0 from '../assets/khushi.jpg';
+// import imgSrc1 from '../assets/preity.jpg';
+// import imgSrc2 from '../assets/ayush.jpg';
+// import imgSrc3 from '../assets/aryan.jpg';
+// import imgSrc4 from '../assets/anjali.jpg';
+// import imgSrc5 from '../assets/pawan.jpg';
 
-const imgArr=[imgSrc0,imgSrc1,imgSrc2,imgSrc3,imgSrc4,imgSrc5];
+// const imgArr=[imgSrc0,imgSrc1,imgSrc2,imgSrc3,imgSrc4,imgSrc5];
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
