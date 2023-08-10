@@ -1,1 +1,0 @@
-import{j as r}from"./NewNavbar-de6dc0b8.js";const e=()=>r.jsx(r.Fragment,{children:r.jsx("div",{className:"most-imp-info",children:r.jsx("div",{className:"info",children:r.jsx("marquee",{behavior:"",direction:"ltr",children:r.jsx("a",{href:"#",children:r.jsx("b",{children:"Admission open for 2023-24"})})})})})});export{e as M};
