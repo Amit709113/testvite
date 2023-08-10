@@ -89,7 +89,7 @@ const Testimonial = (props) => {
               <div className={styles.para}>{el.testimonial}</div>
               <div className={styles.image_container}>
 
-                <img src={imgArr[i]} alt="default" className={styles.image} />
+                <img src={el.imgSrc} alt="default" className={styles.image} />
 
               </div>
               <div className={styles.subText}>{el.author}</div>
