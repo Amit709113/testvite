@@ -1,10 +1,17 @@
 import React from 'react'
+import AboutMain from '../vlogFiles/AboutMain'
+
+import GoToTop from './GoToTop'
+
+//data
+import obj from '../data/AboutMainData.json'
 
 const About = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <AboutMain data={obj.about} />
+      <GoToTop />
+    </>
   )
 }
 
