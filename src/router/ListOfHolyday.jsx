@@ -1,10 +1,13 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const ListOfHolyday = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <p>list of ListOfHolyday</p> 
+     <GoToTop />
+    </>
+
   )
 }
 

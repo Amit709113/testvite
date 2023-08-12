@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const SportsTeakwondo = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      sports / teakwondo
+      <GoToTop />
+    </>
   )
 }
 

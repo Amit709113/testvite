@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const Staff = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <p>the staff</p>
+      <GoToTop />
+    </>
   )
 }
 

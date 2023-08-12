@@ -1,10 +1,16 @@
 import React from 'react'
 
+import OurStrMain from '../vlogFiles/OurStrMain'
+
+import obj from '../data/AboutMainData.json'
+import GoToTop from './GoToTop'
+
 const SchoolStrength = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <OurStrMain data={obj.ourstrength} />  
+      <GoToTop />
+    </>
   )
 }
 

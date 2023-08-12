@@ -1,42 +1,58 @@
 import React from 'react';
-import MostImpInfo from './components/MostImpInfo';
-import SchoolHeading from './components/SchoolHeading';
-import VlogList from './components/VlogList.jsx';
-import Topper from './components/Topper';
-import Testimonial from './components/Testimonial';
-import ContectInfo from './components/ContectInfo';
-import Footer from './components/Footer';
-import data from './data/topperData.json';
-import artical from './data/vlogData.json'
-
-import slide from './data/carouselData.json'
-
 import './App.css'
-import NewNavbar from './components/NewNavbar';
-import Carousel from './components/Carousel';
-import EventBox from './components/EventBox'
-import NoticeBox from './components/NoticeBox'
-import noticeData from './data/noticeData.json'; 
-import eventData from './data/eventData.json'
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
+
+import SharedLayout from './router/SharedLayout'
+import Home from './router/Home'
+import About from './router/About'
+import Abuscus from './router/Abuscus'
+import AdmProcedure from './router/AdmProcedure'
+import CsLab from './router/CsLab'
+import Error from './router/Error'
+import FeeStructure from './router/FeeStructure'
+import GalleryRoute from './router/GalleryRoute'
+import Library from './router/Library'
+import ListOfHolyday from './router/ListOfHolyday'
+import PrincipleMessage from './router/PrincipleMessage'
+import SchoolStrength from './router/SchoolStrength'
+import SchoolStatistic  from './router/SchoolStatistic';
+import Staff from './router/Staff'
+import SportsTeakwondo from './router/SportsTeakwondo';
+import Transportation from './router/Transportation'
+import WhyDps from './router/WhyDps'
 
 
 function App() {
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<SharedLayout />} >
 
-      <MostImpInfo />
-      <SchoolHeading/>
-      <NewNavbar />
-      <Carousel carouselData={slide.slides}/>
-      <div className='notice-wrapper'>
-        <NoticeBox notice={noticeData.noticeBoard}/>
-        <EventBox event={eventData.eventData}/>
-      </div>
-      <VlogList data={artical.articals}/>
-      <Topper />
-      <Testimonial testimonialData={data} />
-      <ContectInfo />
-      <Footer />
+            <Route path='/testvite' element={<Home />} />
+            
+            <Route path='/testvite/about' element={<About />}/>
+            <Route path='/testvite/whydps' element={<WhyDps />}/>
+            <Route path='/testvite/admprocedure' element={<AdmProcedure />}/>
+            <Route path='/testvite/feestructure' element={<FeeStructure />}/>
+            <Route path='/testvite/principlemsg' element={<PrincipleMessage />}/>
+            <Route path='/testvite/schoolstatistic' element={<SchoolStatistic />}/>
+            <Route path='/testvite/staff' element={<Staff />}/>
+            <Route path='/testvite/schoolstrength' element={<SchoolStrength />}/>
+            <Route path='/testvite/listofholyday' element={<ListOfHolyday />}/>
+            <Route path='/testvite/cslab' element={<CsLab />}/>
+            <Route path='/testvite/library' element={<Library />}/>
+            <Route path='/testvite/abuscus' element={<Abuscus />}/>
+            <Route path='/testvite/gallery' element={<GalleryRoute />}/>
+            <Route path='/testvite/sports-teakwondo' element={<SportsTeakwondo />}/>
+            <Route path='/testvite/transportation' element={<Transportation />}/>
+
+            <Route path='*' element={<Error />}/>
+
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      
     </>
   )
 

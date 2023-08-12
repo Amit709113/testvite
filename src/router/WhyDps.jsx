@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const WhyDps = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      Why dps 
+      <GoToTop />
+    </>
   )
 }
 

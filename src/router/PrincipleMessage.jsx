@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const PrincipleMessage = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <p>principle message </p> 
+     <GoToTop />
+    </>
   )
 }
 

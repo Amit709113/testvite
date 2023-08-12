@@ -5,7 +5,7 @@ import NbStartColumn from '../components/NbStartColumn'
 import AboutMainContent from './AboutMainContent'
 
 
-import '../../components/MainContent.css'
+import '../components/MainContent.css'
 
 const AboutMain = ({data}) => {
 

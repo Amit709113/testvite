@@ -1,10 +1,13 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const Abuscus = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <p>abuscus</p>
+      <GoToTop />
+
+    </>
   )
 }
 

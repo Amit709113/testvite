@@ -1,10 +1,13 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const Transportation = () => {
   return (
-    <div>
+    <>
+    <p>transportation</p>
+    <GoToTop />
       
-    </div>
+    </>
   )
 }
 

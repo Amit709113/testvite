@@ -1,10 +1,13 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const CsLab = () => {
   return (
-    <div>
+    <>
+      <p>computer science </p>
+      <GoToTop />
       
-    </div>
+    </>
   )
 }
 

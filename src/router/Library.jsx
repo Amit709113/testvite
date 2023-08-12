@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const Library = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <p>library</p> 
+     <GoToTop />
+    </>
   )
 }
 

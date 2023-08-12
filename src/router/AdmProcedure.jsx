@@ -1,10 +1,12 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const AdmProcedure = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+     <p>Admission procedure</p> 
+     <GoToTop />
+    </>
   )
 }
 

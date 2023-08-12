@@ -1,13 +1,14 @@
 import React from 'react'
 import GoToTop from './GoToTop'
 
-const Error = () => {
+const SchoolStatistic = () => {
   return (
     <div>
-        error page
+        SchoolStatistic
         <GoToTop />
+      
     </div>
   )
 }
 
-export default Error
+export default SchoolStatistic
