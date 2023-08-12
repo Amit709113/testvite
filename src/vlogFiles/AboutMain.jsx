@@ -1,13 +1,13 @@
 import React from 'react'
 
-import ContentPageHeading from '../../components/contentPageHeading'
-import NbStartColumn from '../../components/NbStartColumn'
-import OurStrMainContent from './OurStrMainContent'
+import ContentPageHeading from '../components/contentPageHeading'
+import NbStartColumn from '../components/NbStartColumn'
+import AboutMainContent from './AboutMainContent'
 
 
-import '../../components/MainContent.css'
+import '../components/MainContent.css'
 
-const OurStrMain = ({data}) => {
+const AboutMain = ({data}) => {
 
   const {bgimgsrc,heading,...remData} =data;
   const newData={bgimgsrc,heading};
@@ -21,7 +21,7 @@ const OurStrMain = ({data}) => {
             <div className="containera">
                 <div className="rowa  pmni">
                     <NbStartColumn />
-                    <OurStrMainContent  reqData={remData} />
+                    <AboutMainContent  reqData={remData} />
                 </div>
             </div>
         </div>
@@ -29,4 +29,4 @@ const OurStrMain = ({data}) => {
   )
 }
 
-export default OurStrMain
+export default AboutMain
