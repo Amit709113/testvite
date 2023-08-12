@@ -10,7 +10,7 @@ const VlogList = ({data}) => {
                 {    
                     data.map((element,idx)=>{
                         return(
-                            <Vlog title={element.title} des={element.description} logoKey={element.key} key={idx}/>
+                            <Vlog title={element.title} des={element.description} logoKey={element.key} hrefbtn={element.hrefbtn} key={idx}/>
                         )
                     })
                 }

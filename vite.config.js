@@ -1,8 +1,25 @@
+import {resolve} from 'path';
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
+const root=resolve(__dirname,'src');
+const outDir=resolve(__dirname,'dist');
+
 export default defineConfig({
+  root,
   plugins: [react()],
-  base:'/testvite'
+  base:'/testvite',
+  build:{
+    outDir,
+    emptyOutDir:true,
+    rollupOptions:{
+      input:{
+        main:resolve(root,'index.html'),
+        about:resolve(root,'about','index.html'),
+        ourstrength:resolve(root,'ourstrength','index.html'),
+        gallery:resolve(root,'gallery','index.html')
+      }
+    }
+  }
 })

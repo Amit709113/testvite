@@ -1,40 +1,65 @@
 
     [
         {
-            "testimonial":"ipsum dolor sit  oo ss  fdefd dfde",
+            "testimonial":"I have only great thing to say about my experience that the teachers are amazing they are very helpful. I learn many things from school . The time I spent in this school was much valuable . I like to say thanks to the management of the school for its endless efforts for our future. I miss the school very much.",
             "author":"Khushi Kumari",
             "deg":"2K23 passout (00.00%)",
-            "imgSrc":"src/assets/khushi.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1IgWLKZ2wVIYpZdiUi5zZ8Gguc1h3zQPZ"
+
         },
         {
-            "testimonial":"Mama ka School tha so par liye aar kya ...",
+            "testimonial":" All Feedback are written without their consent and permissions admin are acountable for all",
+            "author":"Taskin Ahmad",
+            "deg":"2K22 passout (00.00%)",
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1WyMGG1G3YM1lRdrhkkkTOXKEiDETlML3"
+        },
+        {
+            "testimonial":" School me ladki ki kami thi Sir please look into the matter for our juniors",
+            "author":"Vipul",
+            "deg":"2K21 passout (00.00%)",
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1WyMGG1G3YM1lRdrhkkkTOXKEiDETlML3"
+        },
+        {
+            "testimonial":"Ghar me hu ya school me pata hi nahi chalta tha dat dono jagah par date kahi nahi",
+            "author":"Anand Singh",
+            "deg":"2K20 passout (00.00%)",
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1WyMGG1G3YM1lRdrhkkkTOXKEiDETlML3"
+        },
+        {
+            "testimonial":"Mama Ka School tha par liye aar kya ... ",
             "author":"Preity Singh",
             "deg":"2K18 passout (00.00%)",
-            "imgSrc":"src/assets/preity.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1FI409pn-Q2dYASIu0twmyuiZbtcGnTbu"
         },
         {
-            "testimonial":"ipsum dolor sit oo ss  fdefd dfds ",
+            "testimonial":"Bhut Kam Dino me bhut kuch mila ... I would like to thanks to each and everyone to whom I interacted in that places ",
+            "author":"Amit Kumar Sahu",
+            "deg":"2K18 passout (00.00%)",
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1WyPXMlP6Bl_rKRVd18Q7kt8dPra0qgzS"
+        },
+        {
+            "testimonial":"I read in this school nearly a decade and I have only great thing to say about my experience that the teachers are amazing they are very helpful. ",
             "author":"Ayush Singh",
             "deg":"2K18 passout (00.00%)",
-            "imgSrc":"src/assets/ayush.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1iumnC7VE32YiAl4RGqeI13rduSE1sz0I"
         },
         {
-            "testimonial":"ipsum dolor sit oo ss  fdefd dfds ",
+            "testimonial":" teachers are amazing they are very helpful. I learn many things from school . The time I spent in this school was much valuable . I like to say thanks to the management of the school for its endless efforts for our future. I miss the school very much. ",
             "author":"Aryan Kumar",
             "deg":"2K23 passout (00.00%)",
-            "imgSrc":"src/assets/aryan.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1kRwCo0MQe6VQqC5cXnbAiOtIsupeDihO"
         },
         {
-            "testimonial":"Illo delectus similique cupiditate enim facilis juth hgh fsdfewd fdfef",
+            "testimonial":"I read in this school nearly a decade and I have only great thing to say about my experience that the teachers are amazing they are very helpful. I learn many things from school . The time I spent in this school was much valuable . I like to say thanks to the management of the school for its endless efforts for our future. I miss the school very much.",
             "author":"Sandhya Kumari",
             "deg":"2K23 passout (00.00%)",
-            "imgSrc":"src/assets/anjali.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=1WyMGG1G3YM1lRdrhkkkTOXKEiDETlML3"
         },
         {
-            "testimonial":"ipsum dolor d ",
+            "testimonial":"I read in this school nearly a decade and I have only great thing to say about my experience that the teachers are amazing they are very helpful. I learn many things from school . The time I spent in this school was much valuable . I like to say thanks to the management of the school for its endless efforts for our future. I miss the school very much. ",
             "author":"Pawan Singh",
             "deg":"2K18 passout (00.00%)",
-            "imgSrc":"src/assets/pawan.jpg"
+            "imgSrc":"http://drive.google.com/uc?export=view&id=147LdzOxj22pLtMzj4BYFc1I0VCYQgSJA"
         }
 
     ]

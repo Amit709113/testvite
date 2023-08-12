@@ -1,19 +1,23 @@
 import React from 'react';
 import MostImpInfo from './components/MostImpInfo';
 import SchoolHeading from './components/SchoolHeading';
-import Navbar from './components/Navbar';
-// import CarouselSlider from './components/CarouselSlider';
-// import VlogList from './components/VlogList.jsx';
-// import Topper from './components/Topper';
-// import Testimonial from './components/Testimonial';
-// import ContectInfo from './components/ContectInfo';
+import VlogList from './components/VlogList.jsx';
+import Topper from './components/Topper';
+import Testimonial from './components/Testimonial';
+import ContectInfo from './components/ContectInfo';
 import Footer from './components/Footer';
-import obj from './data/AboutMainData.json'
-// import data from './data/topperData.json';
-// import artical from './data/vlogData.json'
+import data from './data/topperData.json';
+import artical from './data/vlogData.json'
+
+import slide from './data/carouselData.json'
 
 import './App.css'
-import ContentPageHeading from './components/contentPageHeading';
+import NewNavbar from './components/NewNavbar';
+import Carousel from './components/Carousel';
+import EventBox from './components/EventBox'
+import NoticeBox from './components/NoticeBox'
+import noticeData from './data/noticeData.json'; 
+import eventData from './data/eventData.json'
 
 
 function App() {
@@ -22,13 +26,16 @@ function App() {
 
       <MostImpInfo />
       <SchoolHeading/>
-      <Navbar />
-      <ContentPageHeading obj={obj.about}/>
-      {/* <CarouselSlider /> */}
-      {/* <VlogList data={artical.articals}/> */}
-      {/* <Topper /> */}
-      {/* <Testimonial testimonialData={data} /> */}
-      {/* <ContectInfo /> */}
+      <NewNavbar />
+      <Carousel carouselData={slide.slides}/>
+      <div className='notice-wrapper'>
+        <NoticeBox notice={noticeData.noticeBoard}/>
+        <EventBox event={eventData.eventData}/>
+      </div>
+      <VlogList data={artical.articals}/>
+      <Topper />
+      <Testimonial testimonialData={data} />
+      <ContectInfo />
       <Footer />
     </>
   )

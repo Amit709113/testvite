@@ -24,20 +24,16 @@
     },
     "ourstrength": {
          
-        "heading":"About Divine Public School",
-        "bgimgsrc":"src/assets/gate.jpg",
-        "subHeading":"About Divine Public School",
-        "contentImage":"src/assets/schoolname.jpg",
+        "heading":"Our Strength",
+        "bgimgsrc":"http://drive.google.com/uc?export=view&id=1VuvR0xxTRWIFzM1cSUXykSdwfgEilS5F",
+        "subHeading":"Our Strength",
+        "contentImage":"http://drive.google.com/uc?export=view&id=1TupAJ5P4n_lVRTlVAq_bNN06fxXeRCJN",
         "paraList":[
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores recusandae, voluptatem eum quibusdam modi non maxime commodi possimus aperiam fugiat illo cum tenetur quod impedit quae, similique expedita itaque. Incidunt deleniti consequuntur maiores vero temporibus, distinctio delectus sit non ea!",
+            "Our school encourages students participating in extracurricular activities and it is a great way to widen and broaden students’ social circle, expand their interests, and build leadership skills. Our school promotes students’ involvement in school extracurricular activities which leads to positive long-term outcomes.",
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores recusandae, voluptatem eum quibusdam modi non maxime commodi possimus aperiam fugiat illo cum tenetur quod impedit quae, similique expedita itaque. Incidunt deleniti consequuntur maiores vero temporibus, distinctio delectus sit non ea!"
         ],
         "ulItemList":[
-            "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\" ",
-            "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\"",
-            "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\"",
-            "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\"",
-            "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\"",
+            "The discipline  ",
             "\"Delivering the content through excellent teachers proficient in creating an environment which fosters enquiring attitude and creativity.\""
         ]
     

@@ -4,7 +4,7 @@ import { IoIosSchool } from "react-icons/io"
 import { TbActivityHeartbeat } from "react-icons/tb";
 import { BsStack } from "react-icons/bs";
 
-const Vlog = ({title,des,logoKey}) => {
+const Vlog = ({title,des,logoKey,hrefbtn}) => {
   return (
     <>
         <div className="vlog">
@@ -23,7 +23,7 @@ const Vlog = ({title,des,logoKey}) => {
                 <p className='description'>
                     {des}    
                 </p>
-                <button className="button">View More</button>
+                <a href={hrefbtn}><button className="button">View More</button></a>
             </div>
         </div> 
     </>

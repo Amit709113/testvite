@@ -2,23 +2,22 @@ import React from 'react'
 
 import './ContentPageHeading.css'
 
-import AboutMain from './AboutMain';
+// import AboutMain from './AboutMain';
 
 
 const ContentPageHeading = ({obj}) => {
+
+  console.log(obj);
 
   const {bgimgsrc,heading,...newObj}=obj;
   
   const histroyBgStyle={
     backgroundImage: `url(${bgimgsrc})`,
     backgroundRepeat:' no-repeat',
-    backgroundPosition: `0% 70%`,
+    backgroundPosition: `50% 70%`,/*0 70 */
     backgroundSize: 'cover',
     padding:'60px 0' ,
     width:'100%',
-
-
-    
   }
 
   return (
@@ -34,7 +33,7 @@ const ContentPageHeading = ({obj}) => {
           </div>
         </div>
       </div>
-      <AboutMain  data={newObj}/>
+      {/* <AboutMain  data={newObj}/> */}
 
     </>
   )
