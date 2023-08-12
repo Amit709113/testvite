@@ -48,7 +48,7 @@ const Gallery = ({galleryData}) => {
                 {
                     itemData.map(({id,category,imgSrc,alt,caption},idx)=>{
                         return (<div className='pics' key={idx} onClick={()=>getImg({imgSrc,caption})}>
-                                    <img src={imgSrc} alt={caption + " - " +id} className='gallery-image' />
+                                    <img  src={imgSrc} alt={caption + " - " +id} className='gallery-image' loading='lazy' />
                                 </div>)
                     })
                 }
