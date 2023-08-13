@@ -83,7 +83,7 @@ const SubNavbar = () => {
                     <NavLink to={'/testvite/schoolstrength'} className="dropdown-item">
                         School Strength
                     </NavLink>
-                    <NavLink to={'/testvite/listofholydaay'} className="dropdown-item">
+                    <NavLink to={'/testvite/listofholyday'} className="dropdown-item">
                         List of Holyday
                     </NavLink>
                 </div>
@@ -149,7 +149,7 @@ const SubNavbar = () => {
                     Sports
                 </a>
                 <div className={showToggler[5]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <NavLink to={'/testvite/schoolstrength'} className="dropdown-item">
+                    <NavLink to={'/testvite/sports-teakwondo'} className="dropdown-item">
                         Teakwondo
                     </NavLink>
                 </div>

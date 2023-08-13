@@ -1,11 +1,11 @@
 import React from 'react'
 
-import ContentPageHeading from '../components/contentPageHeading'
-import NbStartColumn from '../components/NbStartColumn'
+import ContentPageHeading from './ContentPageHeading'
+import NbStartColumn from './NbStartColumn'
 import OurStrMainContent from './OurStrMainContent'
 
 
-import '../components/MainContent.css'
+import './MainContent.css'
 
 const OurStrMain = ({data}) => {
 
