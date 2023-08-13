@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 const SubNavbar = () => {
     const [showToggler,setShowToggler]=useState([false,false,false,false,false]);
@@ -7,10 +8,10 @@ const SubNavbar = () => {
     <>
         <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-                <a href="#" className="nav-link">
+                <NavLink to={"/testvite"} className="nav-link ">
                     Home
                     <span className="sr-only">(current)</span>
-                </a>
+                </NavLink>
             </li>
             {/* nav inside nav */}
 
@@ -25,15 +26,15 @@ const SubNavbar = () => {
                     Admission
                 </a>
                 <div className={showToggler[0]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>{/*include show class when it is clicked */}
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={"/testvite/whydps/"} className="dropdown-item">
                         Why DPS
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={"/testvite/admprocedure"} className="dropdown-item">
                         Admission Procedure
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={"/testvite/feestructure"} className="dropdown-item">
                         Fee Structure
-                    </a>
+                    </NavLink>
                 
                 </div>
             </li>
@@ -52,18 +53,18 @@ const SubNavbar = () => {
                     About Us
                 </a>
                 <div className={showToggler[1]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={'/testvite/about'} className="dropdown-item">
                         School as a glance
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={"/testvite/principlemsg"} className="dropdown-item">
                         Principle Message
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={"/testvite/SchoolStatistic"} className="dropdown-item">
                         School statistics
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={"/testvite/staff"} className="dropdown-item">
                         The Staff
-                    </a>
+                    </NavLink>
                 </div>
             </li>
         
@@ -79,12 +80,12 @@ const SubNavbar = () => {
                     Academics
                 </a>
                 <div className={showToggler[2]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={'/testvite/schoolstrength'} className="dropdown-item">
                         School Strength
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={'/testvite/listofholydaay'} className="dropdown-item">
                         List of Holyday
-                    </a>
+                    </NavLink>
                 </div>
             </li>
 
@@ -99,12 +100,12 @@ const SubNavbar = () => {
                     Infrastructure
                 </a>
                 <div className={showToggler[3]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={'/testvite/cslab'} className="dropdown-item">
                         Computer Lab
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={'/testvite/library'} className="dropdown-item">
                         Library(Knowledge Center)
-                    </a>
+                    </NavLink>
                     
 
                 </div>
@@ -122,19 +123,19 @@ const SubNavbar = () => {
                     Facilities
                 </a>
                 <div className={showToggler[4]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={'/testvite/transportation'} className="dropdown-item">
                         Transportation
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </NavLink>
+                    <NavLink to={'/testvite/abuscus'} className="dropdown-item">
                         Abuscus Classes
-                    </a>
+                    </NavLink>
                 </div>
             </li>
 
             <li className="nav-item">
-                <a href="./gallery/" className="nav-link">
+                <NavLink to={'/testvite/schoolstrength'} className="nav-link">
                     Gallery
-                </a>
+                </NavLink>
             </li>
             <li className={showToggler[4]?"nav-item dropdown show":"nav-item dropdown"}
             onClick={()=>{
@@ -148,9 +149,9 @@ const SubNavbar = () => {
                     Sports
                 </a>
                 <div className={showToggler[5]?"dropdown-menu-top dropdown-menu show":"dropdown-menu"}>
-                    <a href="#" className="dropdown-item">
+                    <NavLink to={'/testvite/schoolstrength'} className="dropdown-item">
                         Teakwondo
-                    </a>
+                    </NavLink>
                 </div>
             </li>
         </ul>

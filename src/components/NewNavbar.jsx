@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import { IoMenu } from "react-icons/io5";
 import './NewNavbar.css'
 import SubNavbar from './SubNavbar';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const NewNavbar = () => {
 
     const[showNavbarForMobile,setShowNavbarForMobile]=useState(false);
+    const location= useLocation();
+    useEffect(()=>{
+        setShowNavbarForMobile(false);
+    },[location])
 
   return (
     <>

@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import { useLocation} from 'react-router';
+import { useEffect } from 'react';
 import './navbar_style.css';
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () =>{
     const [showMediaIcon,setShowMediaIcon]=useState(false);
+
+    const location= useLocation();
+    useEffect(()=>{
+        setShowMediaIcon(false);
+    },[location])
+
 
     return(
         <>
