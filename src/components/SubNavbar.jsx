@@ -133,7 +133,7 @@ const SubNavbar = () => {
             </li>
 
             <li className="nav-item">
-                <NavLink to={'/testvite/schoolstrength'} className="nav-link">
+                <NavLink to={'/testvite/gallery'} className="nav-link">
                     Gallery
                 </NavLink>
             </li>
