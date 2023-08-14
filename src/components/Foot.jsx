@@ -5,6 +5,7 @@ import {FaLocationDot} from 'react-icons/fa6'
 // FaLocationDot
 import {BsFillTelephoneFill} from 'react-icons/bs';
 import {MdEmail} from 'react-icons/md'
+import { NavLink } from 'react-router-dom';
 
 const Foot = () => {
   return (
@@ -15,7 +16,7 @@ const Foot = () => {
                         <div className="link-section">
                             <ul>
                                 <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Home</a>
+                                    <NavLink to={'/testvite/'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Home</NavLink>
                                 </li>
                                 <li>
                                     <a href="https://jac.jharkhand.gov.in/jac/"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> JAC Official Site</a>
@@ -24,10 +25,10 @@ const Foot = () => {
                                     <a href="https://www.jacresults.com/"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> JAC Results</a>
                                 </li>
                                 <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> About Us</a>
+                                    <NavLink to={'/testvite/about'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> About Us</NavLink>
                                 </li>
                                 <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Admission</a>
+                                    <NavLink to={'/testvite/admprocedure'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Admission</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -46,16 +47,16 @@ const Facilities = ()=> {
                             <div className="link-section">
                                 <ul>
                                     <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />Sports</a>
+                                    <NavLink to={'/testvite/sports-teakwondo'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />Sports</NavLink>
                                     </li>
                                     <li>
-                                        <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Library</a>
+                                        <NavLink to={'/testvite/library'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Library</NavLink>
                                     </li>
                                     <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Transportation</a>
+                                    <NavLink to={'/testvite/transportation'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Transportation</NavLink>
                                     </li>
                                     <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Computer Labs</a>
+                                    <NavLink to={'/testvite/cslab'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Computer Labs</NavLink>
                                     </li>
                                 </ul>
                             </div>
