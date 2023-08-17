@@ -1,10 +1,13 @@
 import React from 'react'
 import GoToTop from './GoToTop'
+import WhyDpsMain from '../vlogFiles/WhyDpsMain'
+
+import obj from '../data/AdmissionContentData.json'
 
 const WhyDps = () => {
   return (
     <>
-      Why dps 
+      <WhyDpsMain data={obj.whydps} />
       <GoToTop />
     </>
   )

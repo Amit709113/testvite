@@ -1,10 +1,13 @@
 import React from 'react'
 import GoToTop from './GoToTop'
+import AdmProcMain from '../vlogFiles/AdmProcMain.jsx'
+
+import obj from '../data/AdmissionContentData.json'
 
 const AdmProcedure = () => {
   return (
     <>
-     <p>Admission procedure</p> 
+     <AdmProcMain data={obj.admprocedure} /> 
      <GoToTop />
     </>
   )
