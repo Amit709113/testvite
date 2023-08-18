@@ -1,10 +1,12 @@
 import React from 'react'
 import GoToTop from './GoToTop'
+import ListOfHolyDayMain from '../vlogFiles/ListOfHolyDayMain'
+import obj from '../data/AcademicsData.json'
 
 const ListOfHolyday = () => {
   return (
     <>
-     <p>list of ListOfHolyday</p> 
+      <ListOfHolyDayMain data={obj.listofholyday} />
      <GoToTop />
     </>
 

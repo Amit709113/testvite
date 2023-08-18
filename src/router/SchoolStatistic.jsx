@@ -1,13 +1,15 @@
 import React from 'react'
 import GoToTop from './GoToTop'
+import SchoolStatMain from '../vlogFiles/SchoolStatMain'
 
+import obj from '../data/AboutMainData.json'
 const SchoolStatistic = () => {
   return (
-    <div>
-        SchoolStatistic
+    <>
+        <SchoolStatMain data={obj.schoolstat} />
         <GoToTop />
       
-    </div>
+    </>
   )
 }
 

@@ -2,8 +2,8 @@ import React from 'react'
 
 import ContentPageHeading from './ContentPageHeading'
 import NbStartColumn from './NbStartColumn'
-import OurStrMainContent from './OurStrMainContent'
-
+//import OurStrMainContent from './OurStrMainContent'
+import MainContentForAllPages from './MainContentForAllPages'
 
 import './MainContent.css'
 
@@ -21,7 +21,7 @@ const OurStrMain = ({data}) => {
             <div className="containera">
                 <div className="rowa  pmni">
                     <NbStartColumn />
-                    <OurStrMainContent  reqData={remData} />
+                    <MainContentForAllPages  reqData={remData} />
                 </div>
             </div>
         </div>

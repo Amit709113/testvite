@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {FaGreaterThan} from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 const NbStartColumn = () => {
   return(
@@ -17,22 +18,20 @@ const NbStartColumn = () => {
                                 <div className="inner-left-body">
                                     <ul className="left-nav">
                                         <li>
-                                            <a href='#'> <FaGreaterThan />New Notice</a>
+                                            <NavLink to={'/testvite/notice'}> <FaGreaterThan />New Notice</NavLink>
+                                            {/* to should be updated */}
                                         </li>
                                         <li>
-                                            <a href='#'> <FaGreaterThan />Home </a>
+                                            <NavLink to={'/testvite'}> <FaGreaterThan />Home </NavLink>
                                         </li>
                                         <li>
-                                            <a href='#'> <FaGreaterThan />Admission</a>
+                                            <NavLink to={'/testvite/admprocedure'}> <FaGreaterThan />Admission</NavLink>
                                         </li>
                                         <li>
-                                            <a href='#'> <FaGreaterThan />News and Event</a>
+                                            <NavLink to={'/testvite/abuscus'}> <FaGreaterThan />Facilities</NavLink>
                                         </li>
                                         <li>
-                                            <a href='#'> <FaGreaterThan />Facilities</a>
-                                        </li>
-                                        <li>
-                                            <a href='#'> <FaGreaterThan />Contect Us</a>
+                                            <NavLink to={'/testvite/contectus'}> <FaGreaterThan />Contect Us</NavLink>
                                         </li>
                                     </ul>
                                 </div>

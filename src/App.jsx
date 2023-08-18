@@ -20,6 +20,8 @@ import Staff from './router/Staff'
 import SportsTeakwondo from './router/SportsTeakwondo';
 import Transportation from './router/Transportation'
 import WhyDps from './router/WhyDps'
+import Notice from './router/Notice';
+import Contect from './router/Contect';
 
 
 function App() {
@@ -46,6 +48,10 @@ function App() {
             <Route path='/testvite/gallery' element={<GalleryRoute />}/>
             <Route path='/testvite/sports-teakwondo' element={<SportsTeakwondo />}/>
             <Route path='/testvite/transportation' element={<Transportation />}/>
+
+
+            <Route path='/testvite/notice' element={<Notice/>} />
+            <Route path='/testvite/contectus' element={<Contect />} />
 
             <Route path='*' element={<Error />}/>
 
