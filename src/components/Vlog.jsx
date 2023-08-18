@@ -3,6 +3,7 @@ import {BsPersonCircle} from 'react-icons/bs';
 import { IoIosSchool } from "react-icons/io"
 import { TbActivityHeartbeat } from "react-icons/tb";
 import { BsStack } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 const Vlog = ({title,des,logoKey,hrefbtn}) => {
   return (
@@ -23,7 +24,7 @@ const Vlog = ({title,des,logoKey,hrefbtn}) => {
                 <p className='description'>
                     {des}    
                 </p>
-                <a href={hrefbtn}><button className="button">View More</button></a>
+                <NavLink to={hrefbtn}><button className="button">View More</button></NavLink>
             </div>
         </div> 
     </>
