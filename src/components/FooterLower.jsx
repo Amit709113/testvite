@@ -16,8 +16,9 @@ const FooterLower = () => {
             </div>
             
         </div>
-      
+        
     </div>
+     
   )
 }
 

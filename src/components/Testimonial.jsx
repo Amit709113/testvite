@@ -1,13 +1,6 @@
 import styles from "./Testimonial.module.css";
 import React, { useEffect, useRef, useState } from "react";
-// import imgSrc0 from '../assets/khushi.jpg';
-// import imgSrc1 from '../assets/preity.jpg';
-// import imgSrc2 from '../assets/ayush.jpg';
-// import imgSrc3 from '../assets/aryan.jpg';
-// import imgSrc4 from '../assets/anjali.jpg';
-// import imgSrc5 from '../assets/pawan.jpg';
 
-// const imgArr=[imgSrc0,imgSrc1,imgSrc2,imgSrc3,imgSrc4,imgSrc5];
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
@@ -86,14 +79,14 @@ const Testimonial = (props) => {
               className={`feedbackText--${i} ${styles["main-quotes-div"]} ${styles["not-visible"]}`}
             >
               
-              <div className={styles.para}>{el.testimonial}</div>
+              <div className={styles.para}>{el.topperFeedback}</div>
               <div className={styles.image_container}>
 
-                <img src={el.imgSrc} alt="default" className={styles.image} />
+                <img src={el.topperLink} alt="default" className={styles.image} />
 
               </div>
-              <div className={styles.subText}>{el.author}</div>
-              <div className={styles.subDeg}>{el.deg}</div>
+              <div className={styles.subText}>{el.topperName}</div>
+              <div className={styles.subDeg}>{el.topperYear}</div>
 
             </div>
           );
