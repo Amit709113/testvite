@@ -1,0 +1,39 @@
+#backend-nav{
+    background:#333;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#backend-nav .list{
+    padding:12px;
+    grid-column: 3/3;
+    color:#fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#dashboard .dash-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: hsla(0, 0%, 27%, 0.8);
+    color:#fff;
+}
+#dashboard .dash-nav li{
+    padding:16px 0;
+}
+#item-dash {
+    background-color: #ddd;
+}
+
+#item-dash .main-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 21px;
+}
+#item-dash .form-heading{
+    text-align: center;
+}

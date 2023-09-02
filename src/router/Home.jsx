@@ -18,7 +18,6 @@ import noticeData from '../data/noticeData.json';
 import eventData from '../data/eventData.json'
 import vlog from '../data/vlogData.json'
 import topperData from '../data/topperData.json'
-
 const Home = () => {
   return (
     <>

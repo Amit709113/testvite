@@ -1,15 +1,37 @@
 import styles from "./Testimonial.module.css";
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useDebugValue, useEffect, useRef, useState } from "react";
+// const API_URL="http://localhost:9090/api/topper/"
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
-  const { testimonialData } = props;
+  const { testimonialData } = props
   const refFeedbackParentDiv = useRef(null);
   const refButtonsParentDiv = useRef(null);
   const timeoutRef = useRef(null);
   const [delay, setDelay] = useState(100);
   const [index, setIndex] = useState(0);
+
+
+  // const [isLoading,setLoading]=useState(true);
+  // const[testimonialData,setData]=useState([]);
+
+  // const fetchData=async(url)=>{
+  //   try{
+
+  //       const response=await fetch(url);
+  //       const data =await response.json();
+  //       setData(data);
+  //       setLoading(false);
+  //   }
+  //   catch(error){
+  //     console.error("error occured : ",error);
+  //   }
+
+  // }
+
+  // useEffect(()=>{
+  //   fetchData(API_URL);
+  // })
 
   useEffect(() => setDelay(TESTIMONIAL_DELAY), []);
 
@@ -17,13 +39,13 @@ const Testimonial = (props) => {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === props.testimonialData.length - 1 ? 0 : prevIndex + 1
+          prevIndex === testimonialData.length - 1 ? 0 : prevIndex + 1
         ),
       delay
     );
 
     return () => clearTimeout(timeoutRef.current);
-  }, [props.testimonialData.length, index, delay]);
+  }, [testimonialData.length, index, delay]);
 
   const dotsHelper = (idx) => {
     if (refButtonsParentDiv.current === null) return;
@@ -71,8 +93,10 @@ const Testimonial = (props) => {
         <div
           className={`${styles["quotes-img"]} ${styles["quotes-img-right"]}`}
         />
+        {/* {isLoading ? <div>loading ... </div>: */}
+        {/* first remove a curly bracket then use server  */}
+        
         {testimonialData.map((el, i) => {
-          
           return (
             <div
               key={i}
@@ -86,7 +110,7 @@ const Testimonial = (props) => {
 
               </div>
               <div className={styles.subText}>{el.topperName}</div>
-              <div className={styles.subDeg}>{el.topperYear}</div>
+              <div className={styles.subDeg}>{`${el.topperYear} passout (${el.topperScore}%) `}</div>
 
             </div>
           );

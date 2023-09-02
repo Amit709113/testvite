@@ -22,6 +22,9 @@ import Transportation from './router/Transportation'
 import WhyDps from './router/WhyDps'
 import Notice from './router/Notice';
 import Contect from './router/Contect';
+import TopperService from './services/topperService';
+import Testing from './router/Testing';
+import GetMethodChecker from './backend/GetMethodChecker';
 
 
 function App() {
@@ -48,12 +51,15 @@ function App() {
             <Route path='/testvite/gallery' element={<GalleryRoute />}/>
             <Route path='/testvite/sports-teakwondo' element={<SportsTeakwondo />}/>
             <Route path='/testvite/transportation' element={<Transportation />}/>
-
+            
 
             <Route path='/testvite/notice' element={<Notice/>} />
             <Route path='/testvite/contectus' element={<Contect />} />
 
-            <Route path='*' element={<Error />}/>
+            <Route path='/testvite/testing' element={<Testing />}/>
+            <Route path='testvite/getTesting' element={<GetMethodChecker />}/>
+
+            <Route path='*' element={<TopperService />}/>
 
           </Route>
         </Routes>
