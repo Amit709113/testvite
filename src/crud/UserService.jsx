@@ -1,5 +1,5 @@
 import React from 'react'
-import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken } from './Helper'
+import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken,CATEGORY_URL } from './Helper'
 
 export const signUp=(user)=>{
     return myAxios.post(REG_URL,user).then((response) => response.data)
@@ -83,5 +83,24 @@ export const topperPut=(id,topper)=>{
   return myAxiosToken.put(`${TOPPER_URL}${id}`,topper).then((resp)=>resp.data);
 }
 
+//create category
+export const categoryPost=(category)=>{
+  return myAxiosToken.post(CATEGORY_URL,category).then((response)=>response.data);
+}
 
+//getting all category
+export const categoryGet=()=>{
+  return myAxiosToken.get(CATEGORY_URL).then((resp)=>resp.data);
+}
+
+//delete category
+export const categoryDelete=(id)=>{
+  return myAxiosToken.delete(`${CATEGORY_URL}${id}`).then((resp)=>resp.data);
+}
+
+//update category by id 
+export const categoryPut=(id,category)=>{
+  
+  return myAxiosToken.put(`${CATEGORY_URL}${id}`,category).then((resp)=>resp.data);
+}
 

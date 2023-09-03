@@ -19,8 +19,13 @@ import DeleteCarousel from './backend/carousel_backend/DeleteCarousel'
 
 import DeleteTopper from './backend/topper_backend/DeleteTopper'
 import GetAllTopper from './backend/topper_backend/GetAllTopper'
-import ElementNav from './backend/topper_backend/ElementNav'
+import ElementNav from './backend//ElementNav'
 import CreateTopper from './backend/topper_backend/CreateTopper'
+
+import GetAllImageByCategory from './backend/category_backend/GetAllImageByCategory'
+import DeleteCategory from './backend/category_backend/DeleteCategory'
+import CreateCategory from './backend/category_backend/CreateCategory'
+import GetAllCategory from './backend/category_backend/GetAllCategory'
 
 const NewApp = () => {
   return (
@@ -57,6 +62,16 @@ const NewApp = () => {
               <Route path="delete" element={<DeleteTopper />}/>
               {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
+
+            {/* category related routing */}
+            <Route path='category' element={<ElementNav element="category"/>}>
+              <Route path="all" element={<GetAllCategory />}/>
+              <Route path="create" element={<CreateCategory />}/>
+              <Route path="delete" element={<DeleteCategory />}/>
+              <Route path="cname" element={<GetAllImageByCategory />}/>
+              {/* <Route path="" element={<GetAllNotice />}/> */}
+            </Route>
+
           </Route>
         </Route>
         </Route>

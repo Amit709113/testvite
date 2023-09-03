@@ -4,7 +4,7 @@ import UpdateTopper from './UpdateTopper'
 const DeleteTopper = () => {
   
   const [topperList,setTopperList]=useState();
-  const[isclose,setClose]=useState(false);
+  const[isClose,setClose]=useState(false);
   const[topper,setTopper]=useState({})
   const[tId,setTId]=useState(0);
   const[message,setMessage]=useState("");
@@ -37,7 +37,7 @@ const DeleteTopper = () => {
   }
 
   const closeFn=()=>{
-    console.log(" i am called from child componet")
+    //console.log(" i am called from child componet")
     setClose(false);
   }
 
@@ -85,7 +85,7 @@ const DeleteTopper = () => {
         <p>message: {message}</p>
         {/* topper updation new  */}
         {
-          isclose ? <UpdateTopper tId={tId} tpr={topper} closeFn={closeFn} messageSetter={messageSetter}/> : null
+          isClose ? <UpdateTopper tId={tId} tpr={topper} closeFn={closeFn} messageSetter={messageSetter}/> : null
         } 
     </div>
     </>

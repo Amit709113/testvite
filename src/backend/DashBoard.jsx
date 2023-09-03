@@ -12,7 +12,6 @@ const DashBoard = () => {
           <ul className='dash-nav'>
             <li onClick={()=>{
               navigator("/testvite/user/dashboard/notice")
-
             }}> Notice </li>
             
             <li> Event </li>
@@ -24,6 +23,10 @@ const DashBoard = () => {
             <li onClick={()=>{
               navigator("/testvite/user/dashboard/carousel")
             }}> carousel </li>
+
+            <li onClick={()=>{
+              navigator("/testvite/user/dashboard/category")
+            }}> category </li>
 
             <li>User</li>
           </ul>
