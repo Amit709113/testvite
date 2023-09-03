@@ -1,8 +1,8 @@
+//this file is defasted
+
 import React, { useEffect, useState } from 'react'
 
 const url="http://127.0.0.1:9090/api/notices/";
-
-
 
 const NoticeDelete = () => {
     useEffect(()=>{

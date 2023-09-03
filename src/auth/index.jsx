@@ -33,3 +33,13 @@ export const getCurrentUserDetail=()=>{
     else return undefined;
     
 }
+
+//get current user token
+
+export const getToken=()=>{
+    if(isLoggedIn() ){
+    let token=localStorage.getItem("data");
+    return JSON.parse(token).token;
+    }
+    return null;
+}

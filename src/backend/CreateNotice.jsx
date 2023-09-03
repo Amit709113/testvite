@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import './Backend-style.css'
 import { noticePost } from '../crud/UserService';
+import { getCurrentUserDetail, getToken } from '../auth';
+import { useNavigate } from 'react-router-dom';
+const url="http://127.0.0.1:9090/api/notices/"
 
-const Noticedash = () => {
+const CreateNotice = () => {
 
+    
+    const navigate=useNavigate()
     const [notice,setNotice]=useState({noticeTitle:"",noticeDesc:"",noticeDate:"",noticeLink:"",noticeAuthor:""})
     const [message,setMessage]=useState("");
     const handleChange=(event)=>{
@@ -21,19 +26,25 @@ const Noticedash = () => {
             setMessage("title and description must have some value")
             return ;
         }   
-        
         //call server
         noticePost(notice).then((resp)=>{
             console.log(resp);
+            setMessage(`notice is created successfully 
+                         ${JSON.stringify(resp)}`)
+            setTimeout(()=>{
+                setMessage("")
+                navigate("/testvite/user/dashboard")
+            },3000);
+
+
             //problem encountered here unauthorised case and how to fix authorized case 
+            //cors issue happen when we try to send token along with header fix it later
             //print success message and navigate to a new page where
         }).catch(()=>{
             console.log(error);
 
         })
 
-
-        console.log(notice)
 
     }
     const handlerReset=(event)=>{
@@ -43,29 +54,7 @@ const Noticedash = () => {
   return (
     <>
     <div id='item-dash'>
-      <ul >
-        <li>
-            create notice
-        </li>
-
-        <li>
-            update notice
-        </li>
-
-        <li>
-            delete notice
-        </li>
-        <li>
-            view all notice
-        </li>
-        <li>
-            view by id
-        </li>
-
-      </ul>
-
-    <br />
-    <hr />
+      
         <h1 className='form-heading'> Create new Notice  </h1>
     <hr />
         <div className='main-form'>
@@ -84,7 +73,7 @@ const Noticedash = () => {
 
                 <label htmlFor='noticeDate'> Notice Date : </label>
                 <input
-                    type="text"
+                    type="date"
                     placeholder='Enter notice Date'
                     id='noticeDate'
                     name='noticeDate'
@@ -135,9 +124,10 @@ const Noticedash = () => {
                 <button type="reset"> reset </button>
             </form>
         </div>
+        <p>{message}</p>
     </div>
     </>
   )
 }
 
-export default Noticedash
+export default CreateNotice
