@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { carouselDelete } from '../../crud/UserService';
 import { carouselGet ,carouselUpdateApiCall} from '../../crud/UserService';
 
-const DeleteCarosel = () => {
+const DeleteCarousel = () => {
 
   const[carouselList,setCarouselList]=useState();
   const[message,setMessage]=useState("");
@@ -179,4 +179,4 @@ const handlerReset=()=>{
   )
 }
 
-export default DeleteCarosel
+export default DeleteCarousel

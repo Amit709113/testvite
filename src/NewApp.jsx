@@ -15,7 +15,12 @@ import GetAllNotice from './backend/GetAllNotice'
 import CarouselNav from './backend/carousel_backend/CarouselNav'
 import GetAllCarousel from './backend/carousel_backend/GetAllCarousel'
 import CreateCarousel from './backend/carousel_backend/CreateCarousel'
-import DeleteCarosel from './backend/carousel_backend/DeleteCarosel'
+import DeleteCarousel from './backend/carousel_backend/DeleteCarousel'
+
+import DeleteTopper from './backend/topper_backend/DeleteTopper'
+import GetAllTopper from './backend/topper_backend/GetAllTopper'
+import ElementNav from './backend/topper_backend/ElementNav'
+import CreateTopper from './backend/topper_backend/CreateTopper'
 
 const NewApp = () => {
   return (
@@ -41,7 +46,15 @@ const NewApp = () => {
             <Route path='carousel' element={<CarouselNav />}>
               <Route path="all" element={<GetAllCarousel />}/>
               <Route path="create" element={<CreateCarousel />}/>
-              <Route path="delete" element={<DeleteCarosel />}/>
+              <Route path="delete" element={<DeleteCarousel />}/>
+              {/* <Route path="" element={<GetAllNotice />}/> */}
+            </Route>
+
+            {/* topper related routing */}
+            <Route path='topper' element={<ElementNav element="topper"/>}>
+              <Route path="all" element={<GetAllTopper />}/>
+              <Route path="create" element={<CreateTopper />}/>
+              <Route path="delete" element={<DeleteTopper />}/>
               {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
           </Route>

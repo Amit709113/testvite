@@ -17,7 +17,9 @@ const DashBoard = () => {
             
             <li> Event </li>
             <li> Gallery </li>
-            <li>Topper</li>
+            <li onClick={()=>{
+              navigator("/testvite/user/dashboard/topper")
+            }}> topper </li>
 
             <li onClick={()=>{
               navigator("/testvite/user/dashboard/carousel")

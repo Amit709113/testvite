@@ -5,7 +5,7 @@ const GetAllCarousel = () => {
     const [carouselList,setCarouselList]=useState();
     useEffect(()=>{
         allCarousel();
-    })
+    },[])
     const allCarousel = () => {
         carouselGet().then((resp)=>{
             setCarouselList(resp);

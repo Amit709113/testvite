@@ -1,5 +1,5 @@
 import React from 'react'
-import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL, myAxiosToken } from './Helper'
+import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken } from './Helper'
 
 export const signUp=(user)=>{
     return myAxios.post(REG_URL,user).then((response) => response.data)
@@ -60,5 +60,28 @@ export const carouselUpdateApiCall=(id,carousel)=>{
   
   return myAxiosToken.put(`${CAROUSEL_URL}${id}`,carousel).then((resp)=>resp.data);
 }
+
+
+//create topper
+export const topperPost=(topper)=>{
+  return myAxiosToken.post(TOPPER_URL,topper).then((response)=>response.data);
+}
+
+//getting all topper
+export const topperGet=()=>{
+  return myAxiosToken.get(TOPPER_URL).then((resp)=>resp.data);
+}
+
+//delete topper
+export const topperDelete=(id)=>{
+  return myAxiosToken.delete(`${TOPPER_URL}${id}`).then((resp)=>resp.data);
+}
+
+//update topper by id 
+export const topperPut=(id,topper)=>{
+  
+  return myAxiosToken.put(`${TOPPER_URL}${id}`,topper).then((resp)=>resp.data);
+}
+
 
 
