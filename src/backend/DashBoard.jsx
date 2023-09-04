@@ -7,7 +7,7 @@ const DashBoard = () => {
   return (
     <>
       <div id='dashboard'>
-      <h1>Dashboard </h1>
+      <h1 >Dashboard </h1>
         <nav>
           <ul className='dash-nav'>
             
@@ -15,7 +15,10 @@ const DashBoard = () => {
               navigator("/testvite/user/dashboard/notice")
             }}> Notice </li>
 
-            <li> Event </li>
+            <li onClick={()=>{
+              navigator("/testvite/user/dashboard/users")
+            }}> user </li>
+            
             
             <li onClick={()=>{
               navigator("/testvite/user/dashboard/topper")

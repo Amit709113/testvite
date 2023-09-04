@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { noticeDelete, noticeGet,noticeUpdateApiCall } from '../crud/UserService';
+import { noticeDelete, noticeGet,noticeUpdateApiCall } from '../../crud/UserService';
 import { useNavigate } from 'react-router-dom';
 
 const DeleteNotice = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken,CATEGORY_URL,GALLERY_URL } from './Helper'
+import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken,CATEGORY_URL,GALLERY_URL,USER_URL } from './Helper'
 
 export const signUp=(user)=>{
     return myAxios.post(REG_URL,user).then((response) => response.data)
@@ -133,4 +133,24 @@ export const galleryPut=(id,gallery)=>{
 //get all image by category 
 export const gelleryGetByCategory=(categoryId)=>{
   return myAxiosToken.get(`${GALLERY_URL}category/${categoryId}`).then((resp)=>resp.data);
+}
+
+//create user
+export const userPost=(user)=>{
+  return myAxiosToken.post(USER_URL,user).then((response)=>response.data);
+}
+
+//getting all user
+export const userGet=()=>{
+  return myAxiosToken.get(USER_URL).then((resp)=>resp.data);
+}
+
+//delete user
+export const userDelete=(id)=>{
+  return myAxiosToken.delete(`${USER_URL}${id}`).then((resp)=>resp.data);
+}
+
+//update user by id 
+export const userPut=(id,user)=>{
+  return myAxiosToken.put(`${USER_URL}${id}`,user).then((resp)=>resp.data);
 }

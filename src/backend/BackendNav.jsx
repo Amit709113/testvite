@@ -1,3 +1,5 @@
+//deplecited
+
 import React, { useState,useEffect } from 'react'
 import { doLogin, doLogout, getCurrentUserDetail, isLoggedIn } from '../auth';
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -39,12 +41,16 @@ const BackendNav = () => {
                         login && <> 
                         <li>{user.email}</li>
                         <li onClick={logoutHandler}>logout</li>
+                        {navigate('/testvite/user/dashboard/')}
+                        
                         </>
                     }
                     { 
                     !login && <>
                         <li onClick={loginHandler}>login</li>
                         <li onClick={registerHandler}>register</li>
+                        
+
                     </>
 
                     }

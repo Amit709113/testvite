@@ -8,9 +8,7 @@ const PrivateRoute = () => {
     //  in common
     return (
         <>
-        
         { isLoggedIn()?<Outlet /> : <Navigate to={"/testvite/login"} />}
-        
         </>
     )
 }

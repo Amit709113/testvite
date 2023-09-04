@@ -1,6 +1,5 @@
 import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import GetAllNotice from './GetAllNotice';
 
 const NoticeNav = () => {
     const navigator=useNavigate();

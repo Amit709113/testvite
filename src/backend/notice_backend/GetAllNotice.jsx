@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { noticeGet } from '../crud/UserService';
+import { noticeGet } from '../../crud/UserService';
 
 const GetAllNotice = () => {
     const [noticeList,setNoticeList]=useState();

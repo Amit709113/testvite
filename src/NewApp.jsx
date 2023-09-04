@@ -8,10 +8,10 @@ import Login from './crud/Login'
 import DashBoard from './backend/DashBoard'
 import PrivateRoute from './backend/PrivateRoute'
 import BackendNav from './backend/BackendNav'
-import NoticeNav from './backend/NoticeNav'
-import CreateNotice from './backend/CreateNotice'
-import DeleteNotice from './backend/DeleteNotice.jsx';
-import GetAllNotice from './backend/GetAllNotice'
+import NoticeNav from './backend/notice_backend/NoticeNav'
+import CreateNotice from './backend/notice_backend/CreateNotice'
+import DeleteNotice from './backend/notice_backend/DeleteNotice.jsx';
+import GetAllNotice from './backend/notice_backend/GetAllNotice'
 import CarouselNav from './backend/carousel_backend/CarouselNav'
 import GetAllCarousel from './backend/carousel_backend/GetAllCarousel'
 import CreateCarousel from './backend/carousel_backend/CreateCarousel'
@@ -30,6 +30,10 @@ import GetAllImage from './backend/gallery_backend/GetAllImage'
 import UploadImage from './backend/gallery_backend/UploadImage'
 import DeleteImage from './backend/gallery_backend/DeleteImage'
 
+import GetAllUser from './backend/user_backend/GetAllUser'
+import CreateUser from './backend/user_backend/CreateUser'
+import DeleteUser from './backend/user_backend/DeleteUser'
+
 const NewApp = () => {
   return (
     <>
@@ -43,19 +47,17 @@ const NewApp = () => {
           <Route path='dashboard' element={<DashBoard/>} >
             
             {/* notice relate routing */}
-            <Route path='notice' element={<NoticeNav />}>
+            <Route path='notice' element={<ElementNav element='notice' />}>
               <Route path="all" element={<GetAllNotice />}/>
               <Route path="create" element={<CreateNotice />}/>
               <Route path="delete" element={<DeleteNotice />}/>
-              {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
 
             {/* carousel related routing */}
-            <Route path='carousel' element={<CarouselNav />}>
+            <Route path='carousel' element={<ElementNav element="carousel"/>}>
               <Route path="all" element={<GetAllCarousel />}/>
               <Route path="create" element={<CreateCarousel />}/>
               <Route path="delete" element={<DeleteCarousel />}/>
-              {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
 
             {/* topper related routing */}
@@ -63,7 +65,6 @@ const NewApp = () => {
               <Route path="all" element={<GetAllTopper />}/>
               <Route path="create" element={<CreateTopper />}/>
               <Route path="delete" element={<DeleteTopper />}/>
-              {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
 
             {/* category related routing */}
@@ -72,15 +73,21 @@ const NewApp = () => {
               <Route path="create" element={<CreateCategory />}/>
               <Route path="delete" element={<DeleteCategory />}/>
               <Route path="cname" element={<GetAllImageByCategory />}/>
-              {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
+
             {/* Image related routing */}
             <Route path='gallery' element={<ElementNav element="gallery"/>}>
               <Route path="all" element={<GetAllImage  />}/>
               <Route path="create" element={<UploadImage />}/>
               <Route path="delete" element={<DeleteImage />}/>
               <Route path="category" element={<GetAllImageByCategory />}/>
-              {/* <Route path="" element={<GetAllNotice />}/> */}
+            </Route>
+
+            {/* user related routing */}
+            <Route path='users' element={<ElementNav element="users"/>}>
+              <Route path="all" element={<GetAllUser  />}/>
+              <Route path="create" element={<CreateUser />}/>
+              <Route path="delete" element={<DeleteUser />}/>
             </Route>
 
           </Route>

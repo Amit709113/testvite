@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import './Backend-style.css'
-import { noticePost } from '../crud/UserService';
-import { getCurrentUserDetail, getToken } from '../auth';
+import { noticePost } from '../../crud/UserService';
+import { getCurrentUserDetail, getToken } from '../../auth';
 import { useNavigate } from 'react-router-dom';
 const url="http://127.0.0.1:9090/api/notices/"
 
