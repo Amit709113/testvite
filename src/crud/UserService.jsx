@@ -1,5 +1,5 @@
 import React from 'react'
-import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken,CATEGORY_URL } from './Helper'
+import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL,TOPPER_URL, myAxiosToken,CATEGORY_URL,GALLERY_URL } from './Helper'
 
 export const signUp=(user)=>{
     return myAxios.post(REG_URL,user).then((response) => response.data)
@@ -104,3 +104,33 @@ export const categoryPut=(id,category)=>{
   return myAxiosToken.put(`${CATEGORY_URL}${id}`,category).then((resp)=>resp.data);
 }
 
+
+//create gallery
+export const galleryPost=(gallery)=>{
+const {galleryCaption,galleryAlt,galleryLink,galleryCategory} = gallery;
+const newGallery={galleryCaption,galleryAlt,galleryLink}
+
+  return myAxiosToken.post(`${GALLERY_URL}category/${galleryCategory}`,newGallery).then((response)=>response.data);
+}
+
+//getting all gallery
+export const galleryGet=()=>{
+  return myAxiosToken.get(GALLERY_URL).then((resp)=>resp.data);
+}
+
+//delete gallery
+export const galleryDelete=(id)=>{
+  return myAxiosToken.delete(`${GALLERY_URL}${id}`).then((resp)=>resp.data);
+}
+
+//not requried
+//update gallery by id 
+export const galleryPut=(id,gallery)=>{
+  
+  return myAxiosToken.put(`${GALLERY_URL}${id}`,gallery).then((resp)=>resp.data);
+}
+
+//get all image by category 
+export const gelleryGetByCategory=(categoryId)=>{
+  return myAxiosToken.get(`${GALLERY_URL}category/${categoryId}`).then((resp)=>resp.data);
+}

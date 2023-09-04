@@ -8,6 +8,7 @@ export const CAROUSEL_URL='api/carousel/'
 export const TOPPER_URL='api/topper/'
 export const USER_URL="api/user/"
 export const CATEGORY_URL="api/category/"
+export const GALLERY_URL="api/gallery/"
 //1 more for gallery and category
 
 export const myAxios=axios.create({

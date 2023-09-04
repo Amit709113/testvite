@@ -9,7 +9,6 @@ const ElementNav = (props) => {
     <div className='element-dashboard'>
           <ul className='dash-item'>
               <li onClick={()=>{
-                console.log("create")
                   navigator(`/testvite/user/dashboard/${element}/create`)
               }}>
                   create {element}
@@ -26,6 +25,13 @@ const ElementNav = (props) => {
               }}>
                   all {element}
               </li>
+              {
+                element==="gallery"?
+                <li onClick={()=>{
+                    navigator(`/testvite/user/dashboard/${element}/category`)
+                }}
+                >by category</li>:null
+              }
 
               
   

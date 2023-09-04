@@ -1,13 +1,13 @@
 import React from 'react'
-import Register from './crud/Register'
-import "./NewApp.css"
-import Login from './crud/Login'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import SharedLayout from './router/SharedLayout'
+import "./NewApp.css"
+
+import Register from './crud/Register'
+import Login from './crud/Login'
+
 import DashBoard from './backend/DashBoard'
 import PrivateRoute from './backend/PrivateRoute'
 import BackendNav from './backend/BackendNav'
-// import Noticedash from './backend/Noticedash.jsx'
 import NoticeNav from './backend/NoticeNav'
 import CreateNotice from './backend/CreateNotice'
 import DeleteNotice from './backend/DeleteNotice.jsx';
@@ -22,10 +22,13 @@ import GetAllTopper from './backend/topper_backend/GetAllTopper'
 import ElementNav from './backend//ElementNav'
 import CreateTopper from './backend/topper_backend/CreateTopper'
 
-import GetAllImageByCategory from './backend/category_backend/GetAllImageByCategory'
+import GetAllImageByCategory from './backend/gallery_backend/GetAllImageByCategory'
 import DeleteCategory from './backend/category_backend/DeleteCategory'
 import CreateCategory from './backend/category_backend/CreateCategory'
 import GetAllCategory from './backend/category_backend/GetAllCategory'
+import GetAllImage from './backend/gallery_backend/GetAllImage'
+import UploadImage from './backend/gallery_backend/UploadImage'
+import DeleteImage from './backend/gallery_backend/DeleteImage'
 
 const NewApp = () => {
   return (
@@ -69,6 +72,14 @@ const NewApp = () => {
               <Route path="create" element={<CreateCategory />}/>
               <Route path="delete" element={<DeleteCategory />}/>
               <Route path="cname" element={<GetAllImageByCategory />}/>
+              {/* <Route path="" element={<GetAllNotice />}/> */}
+            </Route>
+            {/* Image related routing */}
+            <Route path='gallery' element={<ElementNav element="gallery"/>}>
+              <Route path="all" element={<GetAllImage  />}/>
+              <Route path="create" element={<UploadImage />}/>
+              <Route path="delete" element={<DeleteImage />}/>
+              <Route path="category" element={<GetAllImageByCategory />}/>
               {/* <Route path="" element={<GetAllNotice />}/> */}
             </Route>
 
