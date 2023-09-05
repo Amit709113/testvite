@@ -5,58 +5,51 @@ import { categoryGet, galleryPost } from '../../crud/UserService';
 const UploadImage = () => {
     const navigator=useNavigate();
     const [gallery,setGallery]=useState({galleryCaption:"",galleryAlt:"",galleryLink:"",galleryCategory:""})
-    const [message,setMessage]=useState("");
+    const [message,setMessage]=useState({message:"",ec:0});
     const [categoryList,setCategoryList]=useState();
 
 
     useEffect(()=>{
         //get all category
-        categoryGet().then((resp)=>{setCategoryList(resp)}).catch((e)=>console.log(e));
-    },[])
+        categoryGet().then((resp)=>{
+            setCategoryList(resp)
+            setMessage({message:`category is fetched `,ec:0});
 
-    
+        }).catch((error)=>{
+            setMessage({message:` ${error.message} data can't be fetched `,ec:2})
+        });
+    },[])
 
     const handleChange=(event)=>{
         const {name,value}=event.target;
         setGallery({...gallery,[name]:value});
-        // console.log(name,value)
     }
-
     const handlerSubmit = (event)=>{
         event.preventDefault();
-        const {galleryLink,galleryAlt,galleryCategory}=gallery;
-
+        const {galleryLink,galleryCategory}=gallery;
         //validate here
-        if(galleryLink.trim()=="" || galleryAlt.trim()==""){
-            setMessage("link and alternative must have some value ")
+        if(galleryLink.trim()=="" ){
+            setMessage({message:"link and alternative must have some value ",ec:1})
             return;
-
         }
         //call server here 
         if(galleryCategory==0) {
-            setMessage(`please select any one category ${categoryId}`)
+            setMessage({message:`please select any one category `,ec:1})
             return ;
         }
         galleryPost(gallery).then((resp)=>{
             console.log(resp);
-            setMessage(`Image is successfully added ${gallery.galleryCategory}`);
-            setTimeout(()=>{
-                setMessage("")
-                navigator("/testvite/user/dashboard/gallery/create")  // to be tested
-            },3000)
-            //problem related to unauthorized and authorized case
-            //cors issue with token 
-            //printed successs message
+            setMessage({message:`Image is successfully added on category ${gallery.galleryCategory} with image id : ${resp.galleryId}`,ec:0});
 
         }).catch((error)=>{
-            console.log(error);   //error to be tested 
-        })
+            console.log(error);  //fix when what type of error 
+            setMessage({message:"error to be fixed when what type ",ec:2})
+    })
     }
 
     const handlerReset=()=>{
 
         setGallery({galleryCaption:"",galleryAlt:"",galleryLink:""})
-        console.log(categoryId);
     }
 
 
@@ -116,19 +109,17 @@ const UploadImage = () => {
                             return <option key={idx} > {cate.categoryId} </option>
                     }):null}
                 </select> 
-            <br />
-            <br />
-
-            
-
-            <input type="submit" / > 
-            <span> ______________ </span>
-            <button type="reset"> reset </button>
+            <br /> <br />
+            <div className='btn-container'>
+              <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+              <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+            </div>
 
             
         </form>
         </div>
-      <p>{message}</p>
+        <br />
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
       </div>
     </>
   )

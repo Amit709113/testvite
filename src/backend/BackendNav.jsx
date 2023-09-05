@@ -41,7 +41,7 @@ const BackendNav = () => {
                         login && <> 
                         <li>{user.email}</li>
                         <li onClick={logoutHandler}>logout</li>
-                        {navigate('/testvite/user/dashboard/')}
+                       
                         
                         </>
                     }

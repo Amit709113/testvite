@@ -4,22 +4,21 @@ import { galleryGet } from '../../crud/UserService';
 const GetAllImage = () => {
 
   const [galleryList,setgalleryList]=useState();
+  const [message,setMessage]=useState({message:"",ec:0});
     useEffect(()=>{
-        allgallery();
-    },[])
-    const allgallery = () => {
         galleryGet().then((resp)=>{
             setgalleryList(resp);
+            setMessage({message:`data is fetched successfully !!`,ec:0})
         }).catch((error)=>{
-            console.log(error);
+            setMessage({message:` ${error.message} data can't be fetched `,ec:2})
         })
-    }
-
+    },[])
   return (
     <>
     <div className='main-element'>
-        <h3>All Images  are </h3>
-
+        <h3 className='form-heading'>All Images </h3>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
+      
         <table>
             <thead>
                 <tr>
@@ -30,11 +29,9 @@ const GetAllImage = () => {
                 <th> Drive link </th>
                 <th> image </th>
                 </tr>
-
             </thead>
             <tbody>
             {
-                
                 galleryList!=null ? galleryList.map((gallery,idx)=>{
                     const {galleryId,galleryAlt,galleryCaption,galleryLink}=gallery;
                     return <tr key={idx}>
@@ -45,7 +42,7 @@ const GetAllImage = () => {
                         <td> {galleryLink} </td>
                     </tr>
                     
-                }) : <tr><td>loading ...</td></tr>
+                }) : <tr><td>loading ...</td><td>{message.message}</td></tr>
             }
             </tbody>
         </table>

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { categoryPost, categoryPut } from '../../crud/UserService';
 
 const UpdateCategory = ({cId,cgy,closeFn,messageSetter}) => {
+
   const [category,setCategory]=useState(cgy);
-  
   const handleChange=(event)=>{
     const {name,value}=event.target;
     setCategory({...category,[name]:value})
@@ -15,17 +15,18 @@ const UpdateCategory = ({cId,cgy,closeFn,messageSetter}) => {
 
     //validate
     if(categoryName.trim()==""){
-      messageSetter("name feild must have some value")
+      messageSetter("name feild must have some value",1)
       return;
     }
 
     //call server
     categoryPut(cId,category).then((resp)=>{
-      console.log(resp);
-      messageSetter("category is created successfully");
+      // console.log(resp);
+      messageSetter(`category with name ${resp.categoryName} is successfully updated `,0);
       closeFn();
     }).catch((error)=>{
       console.log(error);
+      messageSetter("error to be fixed for what and when to t",2)
     })
   }
 
@@ -38,8 +39,8 @@ const UpdateCategory = ({cId,cgy,closeFn,messageSetter}) => {
     <>
     <div id='item-dash'>
       
-      <h1 className='form-heading'> update category </h1>
-      <button style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
+      <h3 className='form-heading'> update category </h3>
+      <button className='close-btn leaf-btn' style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
           closeFn()
         }}> close </button>
 
@@ -55,28 +56,23 @@ const UpdateCategory = ({cId,cgy,closeFn,messageSetter}) => {
                 onChange={(e)=>handleChange(e)}
                 value={category.categoryName}
             />
-            <br />
-            <br />
-
+            <br /> <br />
             <label htmlFor='categoryAbout'>About : </label>
-            <input
-                type="text"
-                placeholder='category about '
-                id='categoryAbout'
-                name='categoryAbout'
-                onChange={(e)=>handleChange(e)}
-                value={category.categoryAbout}
-            />
-            <br />
-            <br />
-
-
-            <input type="submit" / > 
-            <span> ______________ </span>
-            <button type="reset"> reset </button>
+            <textarea 
+            placeholder='2 lines about category '
+            rows={5}
+            cols={25}
+            id="categoryAbout"
+            name='categoryAbout'
+            value={category.categoryAbout}
+            onChange={(e)=>handleChange(e)}> </textarea>
+            <br /> <br />
+            <div className='btn-container'>
+                <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+                <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+            </div>
         </form>
         </div>
-      
       </div>
     </>
   )

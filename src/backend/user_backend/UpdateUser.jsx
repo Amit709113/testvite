@@ -15,23 +15,30 @@ const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
     
     //validate 
     //this is not working as expected
-    if(JSON.stringify(name).trim()=="" ||JSON.stringify(email).trim()==""||JSON.stringify(password).trim()==""){
-      messageSetter("name, email and password must have some value")
-      return;
+    try{
+      
+      if(JSON.stringify(name).trim()=="" ||JSON.stringify(email).trim()==""||JSON.stringify(password).trim()==""){
+        messageSetter("name, email and password must have some value",1)
+        return;
+      }
+    }catch(e){
+      messageSetter("User is deleted already enter password  ! ",2)
+
     }
+    
     //call server
     userPut(uId,user).then((resp)=>{
       console.log(resp);
-      messageSetter(`user is successfully updated ${JSON.stringify(resp)}` );
+      messageSetter(`user is successfully updated with ${JSON.stringify(resp.id)}`,0 );
             setTimeout(()=>{
-                messageSetter("")
+                messageSetter("",0)
             },3000)
 
     }).catch((error)=>{
-      console.log(error);
-      messageSetter(error.response.data.name);
+      // console.log(error);
+      messageSetter(error.response.data.message,2);
       setTimeout(()=>{
-          messageSetter("")
+          messageSetter("",0)
       },3000)
     })
   }
@@ -43,8 +50,8 @@ const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
   return (
     <>
       <div id='item-dash'>
-      <h1 className='form-heading'> Update User </h1>
-      <button style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
+      <h3 className='form-heading'> Update User </h3>
+      <button className='close-btn leaf-btn' style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
           closeFn()
         }}> close </button>
       <hr />
@@ -87,21 +94,19 @@ const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
         <br/>
 
         <label htmlFor="about"> Enter about  : </label>
-        <input
-            type="textarea"
-            placeholder='About Yourself'
-            id='about'
-            name='about'
-            onChange={(e)=>handleChange(e)}
-            value={user.about}
-        
-        />
-        {/* try to add text area here  */}
+        <textarea 
+        placeholder='about yourself'
+        rows={5}
+        cols={25}
+        id="about"
+        name='about'
+        value={user.about}
+        onChange={(e)=>handleChange(e)}> </textarea>
         <br/>
         <br/>
         <div className='btn-container'>
-            <button  type="submit"> SUBMIT </button>
-            <button type="reset">RESET</button>
+            <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+            <button className="leaf-btn reset-btn" type="reset">RESET</button>
         </div>
         </form>
       </div>

@@ -6,41 +6,47 @@ const CreateUser = () => {
   const navigator=useNavigate();
   const [message,setMessage]=useState();
   const [user,setUser]=useState({name:"",email:"",password:"",about:""})
+  const [isError,setIsError]=useState(0);
   
   const handleChange=(event)=>{
     const {name,value}=event.target;
-    console.log(name,value)
     setUser({...user,[name]:value})
   }
 
   const handlerSubmit=(event)=>{
     event.preventDefault();
-    const {name,email,password,about}=user;
+    const {name,email,password}=user;
 
     //validate 
     if(name.trim()=="" || email.trim()==""|| password.trim()==""){
+      setIsError(1);
       setMessage("name, email and password must have some value")
       return;
     }
     //call server
     userPost(user).then((resp)=>{
-      console.log(resp);
-      setMessage(`user is successfully created ${JSON.stringify(resp)}` );
+      // console.log(resp);
+      setIsError(0);
+      setMessage(`user is successfully created with name ${resp.name} ` );
+
             setTimeout(()=>{
                 setMessage("")
                 navigator("/testvite/user/dashboard/users/all")  // to be tested
             },3000)
 
     }).catch((error)=>{
-        console.log(error);
+        console.error(error);
+        setIsError(2)
         setMessage(error.response.data.name);
         setTimeout(()=>{
             setMessage("")
-        },3000)
+        },3500)
     })
   }
 
   const handlerReset=()=>{
+    setMessage("");
+    setIsError(0);
     setUser({name:"",email:"",password:"",about:""})
   }
   
@@ -48,11 +54,12 @@ const CreateUser = () => {
   return (
     <>
       <div id='item-dash'>
-      <h1 className='form-heading'> Create new User </h1>
-      <hr />
-      <div className='main-form'> 
-      <form id="forms" onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
-      <label htmlFor="name"> Enter Name : </label>
+        <h1 className='form-heading'> Create new User </h1>
+        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
+        <hr />
+        <div className='main-form'> 
+        <form id="forms" onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
+        <label htmlFor="name"> Enter Name : </label>
         <input
             type="text"
             placeholder='Enter your name'
@@ -78,7 +85,7 @@ const CreateUser = () => {
         <label htmlFor="password"> Enter Password : </label>
         <input
             type="text"
-            placeholder='Enter your name'
+            placeholder='Enter password'
             id='password'
             name='password'
             onChange={(e)=>handleChange(e)}
@@ -89,34 +96,21 @@ const CreateUser = () => {
         <br/>
 
         <label htmlFor="about"> Enter about  : </label>
-        {/* <input
-            type="textarea"
-            placeholder='About Yourself'
-            id='about'
-            name='about'
-            onChange={(e)=>handleChange(e)}
-            value={user.about}
-        
-        /> */}
-        {/* the below line of code for adding text area and is successfully tested */}
         <textarea 
         placeholder='about yourself'
+        rows={6}
+        cols={30}
         id="about"
         name='about'
         value={user.about}
         onChange={(e)=>handleChange(e)}> </textarea>
-       
-        <br/>
-        <br/>
-
-
-        <div className='btn-container'>
-            <button  type="submit"> SUBMIT </button>
-            <button type="reset">RESET</button>
-        </div>
+        <br/> <br/>
+          <div className='btn-container'>
+            <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+            <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+          </div>
         </form>
       </div>
-      <p>{message}</p>
       </div>
     </>
   )

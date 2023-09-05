@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { topperPut } from '../../crud/UserService';
 
 const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
@@ -15,17 +15,17 @@ const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
 
     //validate 
     if(topperName.trim()=="" || topperFeedback.trim()==""|| topperYear.trim()==""){
-      messageSetter("name, feedback and year must have some value")
+      messageSetter("name, feedback and year must have some value",1)
       return;
     }
     //call server
     topperPut(tId,topper).then((resp)=>{
-      console.log(resp);
-      messageSetter("topper is successfully updated ");
+      // console.log(resp);
+      messageSetter(`topper with name ${resp.topperName} is successfully updated `,0);
       closeFn();
 
     }).catch((error)=>{
-        console.log(error);
+        messageSetter("error to be fixed for what and when to t",2)
     })
   }
 
@@ -37,8 +37,8 @@ const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
     <>
     <div id='item-dash'>
       
-      <h1 className='form-heading'> Update form  </h1>
-      <button style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
+      <h3 className='form-heading'> Update form  </h3>
+      <button className='close-btn leaf-btn' style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
           closeFn()
         }}> close </button>
       <hr />
@@ -69,16 +69,18 @@ const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
             <br />
 
             <label htmlFor='topperFeedback'> Feedback : </label>
-            <input
-                type="text"
-                placeholder='Enter feedback '
-                id='topperFeedback'
-                name='topperFeedback'
-                onChange={(e)=>handleChange(e)}
-                value={topper.topperFeedback}
-            />
-            <br />
-            <br />
+            
+            {/* the below line of code for adding text area and is successfully tested */}
+              <textarea 
+              placeholder='feedback'
+              rows={5}
+              cols={25}
+              id="topperFeedback"
+              name='topperFeedback'
+              value={topper.topperFeedback}
+              onChange={(e)=>handleChange(e)}> </textarea>
+              <br />
+              <br />
 
             <label htmlFor='topperScore'> Score : </label>
             <input
@@ -105,9 +107,10 @@ const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
             <br />
 
 
-            <input type="submit" / > 
-            <span> ______________ </span>
-            <button type="reset"> reset </button>
+            <div className='btn-container'>
+                <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+                <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+            </div>
         </form>
         </div>
       </div>

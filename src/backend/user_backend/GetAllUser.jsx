@@ -3,18 +3,25 @@ import { userGet } from '../../crud/UserService';
 
 const GetAllUser = () => {
   const [userList,setUserList]=useState();
+  const [message,setMessage]=useState("");
+  const [isError,setIsError]=useState(0);
     useEffect(()=>{
         userGet().then((resp)=>{
             setUserList(resp);
+            setIsError(0);
+            setMessage(`data is fetched successfully !!`)
         }).catch((error)=>{
-            console.log(error);
+           setIsError(2);
+           setMessage(`${error.message} can't connect to server`);
         })
     },[])
     
   return (
     <>
     <div className='main-element'>
-        <h3>All User  </h3>
+        <h2 className='form-heading'>All User  </h2>
+        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
+        
         <table>
             <thead>
                 <tr>

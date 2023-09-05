@@ -10,29 +10,34 @@ const DeleteNotice = () => {
     const[updateId,setUpdateId]=useState(0);
     const[updateBox,setUpdateBox]=useState(false);
     const navigate=useNavigate();
+    const [isError,setIsError]=useState(0);
 
     const getAllNotice=()=>{
         noticeGet().then((resp)=>{
+            setIsError(0);
+            setMessage("data is fetched successfully")
             setNoticeList(resp)
         }).catch((error)=>{
-            console.log(error);
+            console.error(error);
+            setIsError(0);
+            setMessage(`${error.message} can't connect to server`);
         })
     }
 
     useEffect(()=>{
         getAllNotice();
-    },[message,updateBox])  //careful for this change using 2 element 
+    },[])  
     
     const deleteNoticeById = (id)=>{
-        // console.log(id);
         noticeDelete(id).then(()=>{
-
+            setIsError(0)
             setMessage(`notice with ${id} is deleted successfully !!`)
-
-            //use state which will refresh page
+            setTimeout(()=>setMessage(""),3500)
 
         }).catch((error)=>{
-            console.log(error);
+            setIsError(2);
+           setMessage(`something went wrong !! ${error.response.data.message}`)
+           setTimeout(()=>setMessage(""),3500)
         })
     }
 
@@ -54,14 +59,14 @@ const DeleteNotice = () => {
     const handleChange=(event)=>{
 
         const {name,value}=event.target;
-        console.log(name,value);
+        // console.log(name,value);
         setUpdateNotice({...updateNotice,[name]:value});
 
     }
     const handlerSubmit=(event)=>{
         event.preventDefault();
 
-        const {noticeTitle,noticeDesc,noticeAuthor,noticeLink,noticeDate}=updateNotice;
+        const {noticeTitle,noticeDesc}=updateNotice;
         //validate
         if(noticeTitle.trim()=="" || noticeDesc.trim()=="" ){
             setMessage("title and description must have some value")
@@ -69,14 +74,16 @@ const DeleteNotice = () => {
         }   
         //call server
         noticeUpdateApiCall(updateId,updateNotice).then((resp)=>{
-            console.log(resp);
+            setIsError(0);
             setMessage("notice is updated successfully refresh page to see changes")
             setTimeout(()=>{setTimeout("")},3000)
             setUpdateBox(false);
-            //do more like removing of update notice box
             
         }).catch((error)=>{
-            console.log(error);
+            setIsError(2);
+            setMessage(`something went wrong !! ${error.response.data.message}` )
+            console.error(error);
+            setTimeout(()=>setMessage(""),3500)
         })
         //close the notice box
     }
@@ -89,55 +96,53 @@ const DeleteNotice = () => {
   return (
     <>
      <div className='main-element'>
-        <h3>delete notice here</h3>
+        <h2 className='form-heading'>delete / update </h2>
+        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
+        
 
         <table>
             <thead>
                 <tr>
-                    <td> Serial No </td>
-                    <td> Notice Id </td>
-                    <td> Date </td>
-                    <td> Title </td>
-                    <td>Delete</td>
-                    <td> Update</td>
+                    <th> Serial No </th>
+                    <th> Notice Id </th>
+                    <th> Date </th>
+                    <th> Title </th>
+                    <th>Delete</th>
+                    <th> Update</th>
                 </tr>
             </thead>
             <tbody>
             {
                 noticeList!=null ? noticeList.map((notice,idx)=>{
                     const {noticeId,noticeDate,noticeTitle}=notice;
-                    return <tr>
+                    return <tr key={idx}>
                         <td> {idx+1} </td>
                         <td> {noticeId}</td>
                         <td> {noticeDate}</td>
                         <td> {noticeTitle}</td>
                         <td>
-                            <button onClick={()=>handlerDelete(noticeId)}>delete</button>
+                            <button className='leaf-btn delete-btn' onClick={()=>handlerDelete(noticeId)}>delete</button>
                         </td>
                         <td>
-                            <button onClick={()=>handlerUpdate(noticeId,notice)}>update</button>
+                            <button className='leaf-btn update-btn' onClick={()=>handlerUpdate(noticeId,notice)}>update</button>
                         </td>
 
                     </tr>
                     
-                }) : <div>loading ...</div>
+                }) : <tr><td>loading ...</td></tr>
             }
             </tbody>
         </table>
-        <p> message : {message}</p>
 
         {/* update notice  */}
             
         {!updateBox?null:
-        <>
             <div id='item-dash'>
-            
-                <h1 className='form-heading'> Update Notice  </h1>
-                <button style={{float:"right",padding:"6px",margin:"12px"}} onClick={()=>setUpdateBox(false)}> close </button>
+                <h3 className='form-heading'> Update Notice  </h3>
+                <button className='leaf-btn close-btn' style={{float:"right",padding:"6px",margin:"12px"}} onClick={()=>setUpdateBox(false)}> close </button>
                 <hr />
                 <div className='main-form'>
                     <form onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
-
                         <label htmlFor='noticeTitle'> Notice Title : </label>
                         <input
                             type="text"
@@ -158,18 +163,6 @@ const DeleteNotice = () => {
                             name='noticeDate'
                             onChange={(e)=>handleChange(e)}
                             value={updateNotice.noticeDate}
-                        />
-                        <br />
-                        <br />
-
-                        <label htmlFor='noticeDesc' >Notice Description : </label>
-                        <input
-                            type="textarea"
-                            placeholder='Enter notice Description'
-                            id='noticeDesc'
-                            name='noticeDesc'
-                            onChange={(e)=>handleChange(e)}
-                            value={updateNotice.noticeDesc}
                         />
                         <br />
                         <br />
@@ -198,14 +191,26 @@ const DeleteNotice = () => {
                         <br />
                         <br />
 
-                        <input type="submit" / > 
-                        <span> ______________ </span>
-                        <button type="reset"> reset </button>
+                        <label htmlFor='noticeDesc' >Notice Description :<br /> </label>
+                            <textarea 
+                            placeholder='Describe '
+                            rows={6}
+                            cols={50}
+                            id="noticeDesc"
+                            name='noticeDesc'
+                            value={updateNotice.noticeDesc}
+                            onChange={(e)=>handleChange(e)}> </textarea>
+                        <br /> <br />
+
+                        <div className='btn-container'>
+                            <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+                            <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+                        </div>
                     </form>
                 </div>
-                <p>{message}</p>
+                
             </div>
-    </>
+    
         }
 
 
@@ -213,5 +218,4 @@ const DeleteNotice = () => {
     </>
   )
 }
-
 export default DeleteNotice

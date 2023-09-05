@@ -36,8 +36,13 @@
     justify-content: center;
     margin-top: 21px;
 }
-#item-dash .form-heading{
-    text-align: center;;
+ .form-heading{
+    text-align: center;
+    text-transform: uppercase;
+    color:#222;
+    padding:12px;
+    background-color: #e2a3a3;
+    margin:0;
 }
 /* style  for create notice update notice such type of element */
 .element-dashboard{
@@ -70,4 +75,83 @@
 .main-element th,td{
     padding:12px;
 
+}
+.leaf-btn{
+    padding: 8px 12px;
+    text-transform: capitalize;
+    font-weight: bold;
+    outline: none;
+    border:0.5px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+label{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+input{
+    border: 1px solid #333;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.submit-btn{
+    background-color: #28b912;
+}
+.submit-btn:hover{
+    background-color: #227e14;
+}
+.reset-btn{
+    background-color: #69ccd8;
+}
+.reset-btn:hover{
+    background-color: #3e9ea8;
+}
+.message-log{
+    text-align: center;
+    font-weight: bold;
+    background-color: yellowgreen;
+    padding: 12px;
+    margin:0;
+    
+}
+.message-success-log{
+    color:#306b00;
+   
+}
+.message-error-log{
+    color:#ff0000;
+}
+.message-warning-log{
+    color:#5208c1;
+}
+textarea, input, select,option{
+    margin-left:24px;
+    border:1px solid #222;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.close-btn{
+    background-color: #f5f534;
+}
+.close-btn:hover{
+    background-color: #c2c208;
+}
+.delete-btn{
+    background-color: #ff00009f;
+    color:white;
+    border:none;
+}
+.update-btn{
+    background-color: #001aff9f;
+    color:white;
+    border:none;
+}
+.delete-btn:hover{
+    background-color: #a90101;
+}
+.update-btn:hover{
+    background-color: #0212a4
 }

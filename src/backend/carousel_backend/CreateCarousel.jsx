@@ -5,52 +5,46 @@ import { useNavigate } from 'react-router-dom';
 const CreateCarousel = () => {
     const navigator=useNavigate();
     const [carousel,setCarousel]=useState({carouselComment:"",carouselAlt:"",carouselLink:""})
-    const [message,setMessage]=useState("");
+    const [message,setMessage]=useState({message:"",ec:0});
     const handleChange=(event)=>{
         const {name,value}=event.target;
         setCarousel({...carousel,[name]:value});
-        // console.log(name,value)
     }
-
     const handlerSubmit = (event)=>{
         event.preventDefault();
         const {carouselLink,carouselAlt}=carousel;
 
         //validate here
-        if(carouselLink.trim()=="" || carouselAlt.trim()==""){
-            setMessage("link and alternative must have some value ")
+        if(carouselLink.trim()==""){
+            setMessage({message:"link field must have some value",ec:1})
             return;
-
         }
         //call server here 
         carouselPost(carousel).then((resp)=>{
             console.log(resp);
-            setMessage("carousel is successfully created ");
+            setMessage({message:`carousel is successfully created with ID ${resp.carouselId}`,ec:0})
             setTimeout(()=>{
-                setMessage("")
+                setMessage({message:"",ec:0})
                 navigator("/testvite/user/dashboard/carousel/all")  // to be tested
 
-            },3000)
+            },3500)
             //problem related to unauthorized and authorized case
             //cors issue with token 
             //printed successs message
 
         }).catch((error)=>{
-            console.log(error);   //error to be tested 
-
-        }
-        )
+            console.error(error);
+            setMessage({message:"error occured ",ec:2})
+        })
     }
-
     const handlerReset=()=>{
         setCarousel({carouselComment:"",carouselAlt:"",carouselLink:""})
     }
-
     return (
     <>
     <div id='item-dash'>
-      
-        <h1 className='form-heading'> Create new Carousel </h1>
+        <h2 className='form-heading'> Create new Carousel </h2>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
         <hr />
         <div className='main-form'>
           <form onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
@@ -61,10 +55,8 @@ const CreateCarousel = () => {
                   id='carouselComment'
                   name='carouselComment'
                   onChange={(e)=>handleChange(e)}
-                  value={carousel.carouselComment}
-              />
-              <br />
-              <br />
+                  value={carousel.carouselComment} />
+              <br /><br />
 
               <label htmlFor='carouselAlt'> Carousel Alternative : </label>
               <input
@@ -75,8 +67,7 @@ const CreateCarousel = () => {
                   onChange={(e)=>handleChange(e)}
                   value={carousel.carouselAlt}
               />
-              <br />
-              <br />
+              <br /><br />
 
               <label htmlFor='carouselLink'> Carousel Drive Link </label>
               <input
@@ -87,18 +78,14 @@ const CreateCarousel = () => {
                   onChange={(e)=>handleChange(e)}
                   value={carousel.carouselLink}
               />
-              <br />
-              <br />
-
-              <input type="submit" / > 
-              <span> ______________ </span>
-              <button type="reset"> reset </button>
+              <br /> <br />
+                <div className='btn-container'>
+                    <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+                    <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+                </div>
           </form>
           </div>
-        <p>{message}</p>
         </div>
-
-
     </>
   )
 }

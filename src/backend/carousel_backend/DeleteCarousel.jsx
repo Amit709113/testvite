@@ -6,31 +6,34 @@ import { carouselGet ,carouselUpdateApiCall} from '../../crud/UserService';
 const DeleteCarousel = () => {
 
   const[carouselList,setCarouselList]=useState();
-  const[message,setMessage]=useState("");
+  const [message,setMessage]=useState({message:"",ec:0});
   const[updateCarousel,setUpdateCarousel]=useState();
   const[updateId,setUpdateId]=useState(0);
   const[updateBox,setUpdateBox]=useState(false);
 
-  const navigate=useNavigate();
-
   useEffect(()=>{
     allCarousel();
-  },[message])  //to be include updateCarousel 
-
+  },[])
   const allCarousel = () => {
       carouselGet().then((resp)=>{
+      setMessage({message:` data is fetched `,ec:0})
           setCarouselList(resp);
       }).catch((error)=>{
-          console.log(error);
+        setMessage({message:` ${error?error.message:null} data can't be fetched `,ec:2})
+            
       })
   }
 
   const  deleteCarouselById=(id)=>{
     carouselDelete(id).then((resp)=>{
-      console.log(message)
-      setMessage(`carousel with id ${id} is deleted successfully ${JSON.stringify(resp)}`)
+      // console.log(message)
+      setMessage({message:`carousel with id ${id} is deleted successfully `,ec:0})
+            
     }).catch((error)=>{
-      console.log(error)
+      if(error.response.status==404)
+        setMessage({message:` ${error.response.data.message} already deleted `,ec:1})
+      else
+        setMessage({message:"data can't be fetched",ec:"0"})
     })
   }
   const handlerDelete=(id)=>{
@@ -53,44 +56,33 @@ const DeleteCarousel = () => {
 
 const handlerSubmit = (event)=>{
     event.preventDefault();
-    const {carouselLink,carouselAlt}=updateCarousel;
-
+    const {carouselLink}=updateCarousel;
     //validate here
-    if(carouselLink.trim()=="" || carouselAlt.trim()==""){
-        setMessage("link and alternative must have some value ")
+    if(carouselLink.trim()==""){
+      setMessage({message:"link must have some valid value",ec:1})
         return;
-
     }
     //call server here 
     carouselUpdateApiCall(updateId,updateCarousel).then((resp)=>{
-        console.log(resp);
-        setMessage("carousel is successfully updated ");
-        setUpdateBox(false);
-        setTimeout(()=>{
-            setMessage("")
-           // navigator("/testvite/user/dashboard/carousel/all")  // to be tested
-
-        },3000)
-        //problem related to unauthorized and authorized case
-        //cors issue with token 
-        //printed successs message
+        // console.log(resp);
+        setMessage({message:`carousel is successfully updated with ID ${resp.carouselId}`,ec:0})
+          setTimeout(()=>{
+             setMessage({message:"",ec:0})},3000)
 
     }).catch((error)=>{
-        console.log(error);   //error to be tested 
-
-    }
-    )
+      console.error(error); //error to be tested 
+      setMessage({message:"error occured ",ec:2})
+    })
 }
 
 const handlerReset=()=>{
     setUpdateCarousel({carouselComment:"",carouselAlt:"",carouselLink:""})
 }
-
   return (
     <>
       <div className='main-element'>
 
-        <h3> delete carousel</h3>
+        <h3 className='form-heading'> delete carousel</h3>
         <table>
           <thead>
             <tr>
@@ -108,14 +100,14 @@ const handlerReset=()=>{
                   return (<tr key={idx}>
                     <td>{idx+1}</td>
                     <td>{carouselId}</td><td>{carouselComment}</td>
-                    <td><button onClick={()=>handlerDelete(carouselId)}>Delete</button></td>
-                    <td><button onClick={()=>handlerUpdate(carouselId,carousel)}> Update </button></td>
+                    <td><button className='leaf-btn delete-btn' onClick={()=>handlerDelete(carouselId)}>Delete</button></td>
+                    <td><button className='leaf-btn update-btn' onClick={()=>handlerUpdate(carouselId,carousel)}> Update </button></td>
                   </tr>)
-              }):<tr><td>loading ...</td></tr>
+              }):<tr><td>loading ...</td><td>{message.message}</td></tr>
             }
           </tbody>
         </table>
-        <p> message : {message}</p>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
       </div>
 
       {/* updating logic */}
@@ -123,8 +115,8 @@ const handlerReset=()=>{
     <>{!updateBox?null:
       <div id='item-dash'>
       
-        <h1 className='form-heading'> Update Carousel </h1>
-        <button style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
+        <h3 className='form-heading'> Update Carousel </h3>
+        <button className='leaf-btn close-btn ' style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
           setUpdateBox(false);
         }}> close </button>
         <hr />
@@ -165,13 +157,12 @@ const handlerReset=()=>{
               />
               <br />
               <br />
-
-              <input type="submit" / > 
-              <span> ______________ </span>
-              <button type="reset"> reset </button>
+              <div className='btn-container'>
+                <button className='leaf-btn submit-btn' type="submit"> SUBMIT </button>
+                <button  className='leaf-btn reset-btn' type="reset">RESET</button>
+              </div>
           </form>
           </div>
-        <p>{message}</p>
       </div>
     }
       </>

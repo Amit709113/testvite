@@ -3,22 +3,26 @@ import { carouselGet } from '../../crud/UserService';
 
 const GetAllCarousel = () => {
     const [carouselList,setCarouselList]=useState();
+    const [message,setMessage]=useState({message:"",ec:0});
+
     useEffect(()=>{
         allCarousel();
     },[])
     const allCarousel = () => {
         carouselGet().then((resp)=>{
-            setCarouselList(resp);
+            setMessage({message:"data is fetched successfully",ec:0})
+           setCarouselList(resp);
         }).catch((error)=>{
-            console.log(error);
+            setMessage({message:` ${error.message} data can't be fetched `,ec:2})
+            console.error(error);
         })
     }
 
   return (
    <>
    <div className='main-element'>
-        <h3>All Carousel are </h3>
-
+        <h3 className='form-heading'>All Carousel  </h3>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
         <table>
             <thead>
                 <tr>
@@ -32,7 +36,6 @@ const GetAllCarousel = () => {
             </thead>
             <tbody>
             {
-                
                 carouselList!=null ? carouselList.map((carousel,idx)=>{
                     const {carouselId,carouselAlt,carouselComment,carouselLink}=carousel;
                     return <tr key={idx}>
@@ -43,11 +46,10 @@ const GetAllCarousel = () => {
                         <td> {carouselLink} </td>
                     </tr>
                     
-                }) : <tr><td>loading ...</td></tr>
+                }) : <tr><td>loading ...</td><td>{message.message}</td></tr>
             }
             </tbody>
         </table>
-        
     </div>
    </>
   )

@@ -1,1 +1,0 @@
-//notice related api calling
