@@ -27,6 +27,7 @@ import Contect from './router/Contect';
 function App() {
   return (
     <>
+
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SharedLayout />} >
