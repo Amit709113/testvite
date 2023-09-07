@@ -1,9 +1,19 @@
-import React from 'react'
-
+import React, { useEffect,useState } from 'react'
 import './NoticeBox.css'
+import { noticeGet } from '../crud/UserService';
 
 const NoticeBox = (props) => {
-  const{notice}=props;
+
+  const[notice,setNotice]=useState();
+
+  useEffect(()=>{
+    noticeGet().then((resp)=>{
+      setNotice(resp);
+
+    }).catch((error)=>{
+      console.error(error);
+    })
+  },[])
 
   return (
     <>
@@ -16,7 +26,7 @@ const NoticeBox = (props) => {
             scrollAmount="6" 
             scrollDelay="6"   
          >
-        {
+        {notice?
           
           notice.map((item,idx)=>{
             return(
@@ -25,18 +35,19 @@ const NoticeBox = (props) => {
                   {item.noticeDate}
                 </div>
                 <div className="notice-title">
-                  <a href={item.link} target='_blank' >{item.noticeTitle}</a>
+                  <a href={item.noticeLink} target='_blank' >{item.noticeTitle}</a>
                 </div>
 
                 <div className='notice-content'>
                   {item.noticeDesc}
                 </div>
                 <br />
-                <div className='authority'>{item.auther}</div>
+                <div className='authority'>{item.noticeAuthor}</div>
                 <hr />
               </div>
             )
           })
+          :<div>loading....</div>
         }
         </marquee>
         </div>

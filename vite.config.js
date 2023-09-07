@@ -16,9 +16,7 @@ export default defineConfig({
   //   rollupOptions:{
   //     input:{
   //       main:resolve(root,'index.html'),
-  //       about:resolve(root,'about','index.html'),
-  //       ourstrength:resolve(root,'ourstrength','index.html'),
-  //       gallery:resolve(root,'gallery','index.html')
+  //       adm:resolve(root,'adm','index.html')
   //     }
   //   }
   // }
