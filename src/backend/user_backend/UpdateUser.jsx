@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { userPut } from '../../crud/UserService';
-
+import { AiOutlineClose } from "react-icons/ai";
 const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
   const[user,setUser]=useState(usr)
 
@@ -53,7 +53,7 @@ const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
       <h3 className='form-heading'> Update User </h3>
       <button className='close-btn leaf-btn' style={{float:"right",padding:"6px",margin:"12px"}}  onClick={()=>{
           closeFn()
-        }}> close </button>
+        }}> <AiOutlineClose className='icon-btn'/> </button>
       <hr />
       <div className='main-form'> 
       <form onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>

@@ -1,10 +1,9 @@
 //deplecited
 
 import React, { useState,useEffect } from 'react'
-import { doLogin, doLogout, getCurrentUserDetail, isLoggedIn } from '../auth';
+import {doLogout, getCurrentUserDetail, isLoggedIn } from '../auth';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { MdNoBackpack } from 'react-icons/md';
-import Login from '../crud/Login';
+import { BiLogIn,BiLogOut } from "react-icons/bi";
 
 const BackendNav = () => {
     const navigate= useNavigate();
@@ -31,23 +30,20 @@ const BackendNav = () => {
     const registerHandler=()=>{
         navigate('/testvite/register')
     }
-    
-
-
   return (<>
         <nav id='backend-nav'>
                 <ul className='list'>
                     {
                         login && <> 
                         <li>{user.email}</li>
-                        <li onClick={logoutHandler}>logout</li>
+                        <li onClick={logoutHandler}><span className='icon-btn'> <BiLogOut /></span></li>
                        
                         
                         </>
                     }
                     { 
                     !login && <>
-                        <li onClick={loginHandler}>login</li>
+                        <li onClick={loginHandler}>login<span className='icon-btn' > <BiLogIn /></span>  </li>
                         <li onClick={registerHandler}>register</li>
                         
 

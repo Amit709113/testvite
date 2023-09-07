@@ -7,11 +7,11 @@ const DashBoard = () => {
   return (
     <>
       <div id='dashboard'>
-      <h1 >Dashboard </h1>
+      <h1 className='dashboard-heading'>Dashboard </h1>
         <nav>
           <ul className='dash-nav'>
             
-            <li onClick={()=>{
+            <li className='active' onClick={()=>{
               navigator("/testvite/user/dashboard/notice")
             }}> Notice </li>
 
