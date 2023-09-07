@@ -1,6 +1,6 @@
+import { topperGet } from "../crud/UserService";
 import styles from "./Testimonial.module.css";
-import React, { useDebugValue, useEffect, useRef, useState } from "react";
-// const API_URL="http://localhost:9090/api/topper/"
+import React, {useEffect, useRef, useState } from "react";
 const TESTIMONIAL_DELAY = 5000;
 
 const Testimonial = (props) => {
@@ -10,30 +10,18 @@ const Testimonial = (props) => {
   const timeoutRef = useRef(null);
   const [delay, setDelay] = useState(100);
   const [index, setIndex] = useState(0);
+  const [testimonial,setTestimonial]=useState(null);
 
-
-  // const [isLoading,setLoading]=useState(true);
-  // const[testimonialData,setData]=useState([]);
-
-  // const fetchData=async(url)=>{
-  //   try{
-
-  //       const response=await fetch(url);
-  //       const data =await response.json();
-  //       setData(data);
-  //       setLoading(false);
-  //   }
-  //   catch(error){
-  //     console.error("error occured : ",error);
-  //   }
-
-  // }
-
-  // useEffect(()=>{
-  //   fetchData(API_URL);
-  // })
 
   useEffect(() => setDelay(TESTIMONIAL_DELAY), []);
+  useEffect(()=>{
+    //get all data 
+    topperGet().then((resp)=>{
+      setTestimonial(resp);
+    }).catch((error)=>{
+      console.log(error);
+    })
+  })
 
   useEffect(() => {
     timeoutRef.current = setTimeout(

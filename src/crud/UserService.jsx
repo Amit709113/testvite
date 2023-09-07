@@ -1,6 +1,6 @@
 import React from 'react'
-import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL, myAxiosToken,CATEGORY_URL,GALLERY_URL,USER_URL } from './Helper'  //removing TOPPER_URL url from here add it 
-const TOPPER_URL=`https://dps-backend-production.up.railway.app/api/topper/`
+import { myAxios,REG_URL,LOGIN_URL, NOTICE_URL,CAROUSEL_URL, myAxiosToken,TOPPER_URL,CATEGORY_URL,GALLERY_URL,USER_URL } from './Helper'  //removing TOPPER_URL url from here add it 
+// const TOPPER_URL=`https://dps-backend-production.up.railway.app/api/topper/`
 export const signUp=(user)=>{
     return myAxios.post(REG_URL,user).then((response) => response.data)
 }

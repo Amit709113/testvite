@@ -13,11 +13,11 @@ const SharedLayout = () => {
   return (
 
     <>
-      <MostImpInfo />
+      {/* <MostImpInfo />
       <SchoolHeading />
-      <NewNavbar />
+      <NewNavbar /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

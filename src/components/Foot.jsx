@@ -40,31 +40,20 @@ const Foot = () => {
 
 const Facilities = ()=> {
     return (
-        <>
-           <div className="row-element">
-                        <div className="columns">
-                            <div className="column-heading">Facilities</div>
-                            <div className="link-section">
-                                <ul>
-                                    <li>
-                                    <NavLink to={'/testvite/sports-teakwondo'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />Sports</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to={'/testvite/library'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Library</NavLink>
-                                    </li>
-                                    <li>
-                                    <NavLink to={'/testvite/transportation'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Transportation</NavLink>
-                                    </li>
-                                    <li>
-                                    <NavLink to={'/testvite/cslab'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Computer Labs</NavLink>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+        <div className="row-element">
+            <div className="columns">
+                <div className="column-heading">Facilities</div>
+                <div className="link-section">
+                    <ul>
+                        <li> <NavLink to={'/testvite/sports-teakwondo'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />Sports</NavLink> </li>
+                        <li> <NavLink to={'/testvite/library'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Library</NavLink> </li>
+                        <li> <NavLink to={'/testvite/transportation'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Transportation</NavLink> </li>
+                        <li> <NavLink to={'/testvite/cslab'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Computer Labs</NavLink> </li>
+                    </ul>
                 </div>
-        </>
-      )
-
+            </div>
+        </div>
+    )
 }
 
 
@@ -77,16 +66,10 @@ return (
                         <div className="link-section">
                             <ul>
                                 <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Learning and Assignment Projects</a>
+                                    <NavLink to={'/testvite/sports-teakwondo'}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />Learning and Assignment Projects</NavLink>
                                 </li>
                                 <li>
-                                    <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Social Activities</a>
-                                </li>
-                                <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Group Activities</a>
-                                </li>
-                                <li>
-                                <a href="#"><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} /> Academics Events</a>
+                                    <NavLink to={'/testvite/user/dashboard/ '}><FaGreaterThan style={{paddingTop:'4px' , marginTop:'3px' ,marginRight:"6px"}} />School login</NavLink>
                                 </li>
                             </ul>
                         </div>

@@ -51,27 +51,27 @@ const Login = () => {
         setTimeout(()=>{
           setMessage({message:"",ec:0})
           navigate("/testvite/user/dashboard")
-
           //put here a hook that will refresh each components 
         },1500)
 
       }).catch((error)=>{
+        // console.log(error);
+        setMessage({message:`${error.message}`,ec:2})
 
-        console.log(error);
-        if(error.response.status==400){
+        if(error.response.status!=400 && error.response.status!=404){
+          
+          setTimeout(()=>setMessage({message:"",ec:2}),3000)
+        }
+        else if(error.response.status==404){
+          setMessage({message:` Invalid Username, ${error.response.data.message}`,ec:2})
+          setTimeout(()=>setMessage({message:"",ec:2}),3000)
+        }
+        else if(error.response.status!=400){  
           setMessage({message:"password is incorrect",ec:2})
           setTimeout(()=>setMessage({message:"",ec:2}),3000);
         }
-        if(error.response.status==404){
-          setMessage({message:` Invalid Username, ${error.response.data.message}`,ec:0})
-          setTimeout(()=>setMessage({message:"",ec:2}),3000)
-        }
-        
       })
-
     }
-    
-  
   }
 
   const handlerReset=(e)=>{
@@ -109,6 +109,7 @@ const Login = () => {
           <label htmlFor="password"> Enter Password : </label>
           <input
               type="text"
+              minLength={40}
               placeholder='Enter password'
               id='password'
               name='password'

@@ -1,63 +1,19 @@
 import React, { useEffect,useState } from 'react'
 import './NoticeBox.css'
-
- import { BASE_URL,myAxios} from '../services/helper';
-
-// import axios from 'axios';
-
-
-
-
+import { noticeGet } from '../crud/UserService';
 
 const NoticeBox = (props) => {
-  // const{notice}=props;
-  const[notice,setData]=useState()
-  const[error,setError]=useState()
 
-//Note using promises
-  
-  // useEffect(()=>{
-  //   axios.get(`${BASE_URL}/notices/`).
-  //     then((res)=>{
-  //       console.log(res.data)
-  //       setData(res.data)
-  //   }).
-  //   catch((error)=>setError(error))
-  // },[])
-
-
-
-  //using async and await
-  // const getNoticeData =async()=> {
-  //   try{
-  //     const response= await axios.get(`${BASE_URL}/notices/`); 
-  //     setData(response.data)
-
-  //   }
-  //   catch(error){
-  //     setError("error")
-  //   }
-  // }
- 
-  
-  //osam way to do this 
-
-  const getNoticeData=async()=>{
-    try{
-        const response =await myAxios.get("/notices/");
-        setData(response.data)
-
-    }
-    catch(error){
-        console.error(error.message);    
-    }
-  }
-
+  const[notice,setNotice]=useState();
 
   useEffect(()=>{
-    getNoticeData();
-  })
+    noticeGet().then((resp)=>{
+      setNotice(resp);
 
+    }).catch((error)=>{
+      console.error(error);
+    })
+  },[])
 
   return (
     <>
@@ -86,7 +42,7 @@ const NoticeBox = (props) => {
                   {item.noticeDesc}
                 </div>
                 <br />
-                <div className='authority'>{item.author}</div>
+                <div className='authority'>{item.noticeAuthor}</div>
                 <hr />
               </div>
             )
