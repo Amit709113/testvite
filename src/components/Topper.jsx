@@ -53,7 +53,7 @@ const Topper =  ({toppers}) => {
               topperList.map(({topperName,topperYear,topperFeedback,topperLink,topperScore},idx)=>{
                   return <div className={topperIndex===idx ? `feedback-text main-quotes-div`: `feedback-text main-quotes-div not-visible`}  key={idx}>
                           <div className="para">{topperFeedback}</div>
-                          <div> <img src={topperLink} alt={topperName} className="image"/>  </div >
+                          <div> <img src={topperLink} alt={topperName} className="profile-image"/>  </div >
                           <div className= "subText">{topperName}</div>
                           <div className= "subDeg">{topperYear}  ( {topperScore} %) </div>
                       </div>

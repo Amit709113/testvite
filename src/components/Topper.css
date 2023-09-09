@@ -63,7 +63,7 @@
   
   /* image and own code */
   
-  .image{
+  #topper-section .profile-image{
     margin-top:24px;
     border:2px solid #eee;
     padding:3px;
