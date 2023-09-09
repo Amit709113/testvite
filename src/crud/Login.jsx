@@ -37,7 +37,7 @@ const Login = () => {
       // })
 
       //change end
-
+      setMessage({message:"verifing credentials ...",ec:"1"})
       logIn(loginDetails).then((data)=>{
         //console.log(data);
         doLogin(data,()=>{
