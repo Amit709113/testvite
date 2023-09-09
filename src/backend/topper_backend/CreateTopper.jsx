@@ -24,7 +24,7 @@ const CreateTopper = () => {
     //call server
     topperPost(topper).then((resp)=>{
       // console.log(resp);
-      setMessage({message:"carousel is successfully created ",ec:0})
+      setMessage({message:"topper is successfully added ",ec:0})
             setTimeout(()=>{
               setMessage({message:"",ec:0})
                 navigator("/testvite/user/dashboard/topper/all")  // to be tested

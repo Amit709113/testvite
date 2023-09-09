@@ -109,7 +109,7 @@ const Login = () => {
           <label htmlFor="password"> Enter Password : </label>
           <input
               type="text"
-              minLength={40}
+              minLength={3}
               placeholder='Enter password'
               id='password'
               name='password'
