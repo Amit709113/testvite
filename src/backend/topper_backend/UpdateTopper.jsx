@@ -19,6 +19,7 @@ const UpdateTopper = ({tId,tpr,closeFn,messageSetter}) => {
       return;
     }
     //call server
+    messageSetter("submitting wait for responses ... ",2)
     topperPut(tId,topper).then((resp)=>{
       // console.log(resp);
       messageSetter(`topper with name ${resp.topperName} is successfully updated `,0);

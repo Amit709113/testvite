@@ -20,6 +20,7 @@ const UpdateCategory = ({cId,cgy,closeFn,messageSetter}) => {
     }
 
     //call server
+    messageSetter("submitting wait for responses ... ",2)
     categoryPut(cId,category).then((resp)=>{
       // console.log(resp);
       messageSetter(`category with name ${resp.categoryName} is successfully updated `,0);

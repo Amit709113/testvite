@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const CreateNotice = () => {
     const navigate=useNavigate()
     const [notice,setNotice]=useState({noticeTitle:"",noticeDesc:"",noticeDate:"",noticeLink:"",noticeAuthor:""})
-    const [message,setMessage]=useState("");
+    const [message,setMessage]=useState({message:"",ec:0});
     const [isError,setIsError]=useState(0);
     const handleChange=(event)=>{
         const {name,value}=event.target;
@@ -18,27 +18,24 @@ const CreateNotice = () => {
         const {noticeTitle,noticeDesc,noticeAuthor,noticeLink,noticeDate}=notice;
         //validate
         if(noticeTitle.trim()=="" || noticeDesc.trim()=="" ){
-            setIsError(1);
-            setMessage("title and description must have some value")
+            setMessage({message:"title and description must have some value",ec:1})
             return ;
         }   
         //call server
+        setMessage({message:"submitting wait for responses ... ",ec:2})
         noticePost(notice).then((resp)=>{
-            setIsError(0);
-            setMessage(`notice is created successfully`)
+            messageSetter(`notice is created successfully`,0)
             
             setTimeout(()=>{
                 setMessage("")
-                navigate("/testvite/user/dashboard")
             },3000);
             //problem encountered here unauthorised case and how to fix authorized case 
             //cors issue happen when we try to send token along with header fix it later
             //print success message and navigate to a new page where
         }).catch((error)=>{
-            setIsError(2);
-            setMessage("something went wrong !! ")
+            setMessage({message:"something went wrong !! ",ec:2})
             console.error(error);
-            setTimeout(()=>setMessage(""),3500);
+            setTimeout(()=>setMessage({message:"",ec:0}),3500);
         })
     }
     const handlerReset=(event)=>{
@@ -47,9 +44,8 @@ const CreateNotice = () => {
   return (
     <>
     <div id='item-dash'>
-        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
-        <h1 className='form-heading'> Create new Notice  </h1>
-    <hr />
+        <h2 className='form-heading'> Create new Notice  </h2>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
         <div className='main-form'>
             <form onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
                 <label htmlFor='noticeTitle'> Notice Title : </label>

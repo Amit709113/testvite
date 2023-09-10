@@ -33,6 +33,7 @@ const UploadImage = () => {
             return;
         }
         //call server here 
+        setMessage({message:"submitting wait for responses ... ",ec:2})
         if(galleryCategory==0) {
             setMessage({message:`please select any one category `,ec:1})
             return ;

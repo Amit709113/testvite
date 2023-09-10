@@ -19,7 +19,7 @@ const GetAllUser = () => {
   return (
     <>
     <div className='main-element'>
-        <h2 className='form-heading'>All User  </h2>
+        <h3 className='form-heading'>All User  </h3>
         <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
         
         <table>

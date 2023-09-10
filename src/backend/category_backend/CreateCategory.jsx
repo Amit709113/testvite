@@ -23,6 +23,7 @@ const CreateCategory = () => {
     }
     
     //call server
+    setMessage({message:"submitting wait for responses ... ",ec:2})
     categoryPost(category).then((resp)=>{
       console.log(resp);
       setMessage({message:`category is successfully created with ID ${resp.categoryId}`,ec:0})

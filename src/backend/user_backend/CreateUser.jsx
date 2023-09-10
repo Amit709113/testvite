@@ -3,10 +3,8 @@ import { userPost } from '../../crud/UserService';
 import { useNavigate } from 'react-router-dom';
 
 const CreateUser = () => {
-  const navigator=useNavigate();
-  const [message,setMessage]=useState();
+  const [message,setMessage]=useState({message:"",ec:0})
   const [user,setUser]=useState({name:"",email:"",password:"",about:""})
-  const [isError,setIsError]=useState(0);
   
   const handleChange=(event)=>{
     const {name,value}=event.target;
@@ -19,34 +17,28 @@ const CreateUser = () => {
 
     //validate 
     if(name.trim()=="" || email.trim()==""|| password.trim()==""){
-      setIsError(1);
-      setMessage("name, email and password must have some value")
+      setMessage({message:"name, email and password must have some value",ec:1})
       return;
     }
     //call server
     userPost(user).then((resp)=>{
-      // console.log(resp);
-      setIsError(0);
-      setMessage(`user is successfully created with name ${resp.name} ` );
-
+      // console.log(resp)
+      setMessage({message:`user is successfully created with name ${resp.name} `,ec:0} );
             setTimeout(()=>{
-                setMessage("")
-                navigator("/testvite/user/dashboard/users/all")  // to be tested
+                setMessage({message:"",ec:0})
             },3000)
 
     }).catch((error)=>{
         console.error(error);
-        setIsError(2)
-        setMessage(error.response.data.name);
+        setMessage({message:error.response.data.name,ec:2});
         setTimeout(()=>{
-            setMessage("")
+            setMessage({message:"",ec:2})
         },3500)
     })
   }
 
   const handlerReset=()=>{
-    setMessage("");
-    setIsError(0);
+    setMessage({message:"",ec:0})
     setUser({name:"",email:"",password:"",about:""})
   }
   
@@ -54,9 +46,8 @@ const CreateUser = () => {
   return (
     <>
       <div id='item-dash'>
-        <h1 className='form-heading'> Create new User </h1>
-        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
-        <hr />
+        <h3 className='form-heading'> Create new User </h3>
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
         <div className='main-form'> 
         <form id="forms" onSubmit={(event)=>handlerSubmit(event)} onReset={(e)=>{handlerReset(e)}}>
         <label htmlFor="name"> Enter Name : </label>

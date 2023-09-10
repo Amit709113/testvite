@@ -63,6 +63,7 @@ const handlerSubmit = (event)=>{
         return;
     }
     //call server here 
+    setMessage({message:"submitting wait for responses ... ",ec:2})
     carouselUpdateApiCall(updateId,updateCarousel).then((resp)=>{
         // console.log(resp);
         setMessage({message:`carousel is successfully updated with ID ${resp.carouselId}`,ec:0})

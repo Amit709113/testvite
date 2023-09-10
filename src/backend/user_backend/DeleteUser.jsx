@@ -5,36 +5,27 @@ import UpdateUser from './UpdateUser';
 const DeleteUser = () => {
   const [userList,setUserList]=useState();
   const[user,setUser]=useState({})
-  const[message,setMessage]=useState("");
+  const[message,setMessage]=useState({message:"",ec:0});
   const[uId,setUId]=useState(0);  //to whom we want to update
   const[isClose,setClose]=useState(false);
-  const[isError,setIsError]=useState(0);
   const messageSetter=(mess,ise)=>{
-
-    setIsError(ise);
-    setMessage(mess);
-    
+    setMessage({message:mess,ec:ise})
   }
 
   useEffect(()=>{
       userGet().then((resp)=>{
           setUserList(resp);
-          setIsError(0)
-          setMessage("data is fetched successfully")
+          setMessage({message:"data is fetched successfully",ec:0})
       }).catch((error)=>{
-          // console.log(error);
-          setIsError(2);
-          setMessage(`${error.message} can't connect to server`);
+          setMessage({message:`${error.message} can't connect to server`,ec:2});
       })
   },[])
 
   const handlerDelete=(id)=>{
     userDelete(id).then((resp)=>{
-      setIsError(0);
-      setMessage(`${resp.message} with id : ${id} !!`)
+      setMessage({message:`${resp.message} with id : ${id} !!`,ec:0})
     }).catch((error)=>{
-      setIsError(2);
-      setMessage(`${error.data.status}`)
+      setMessage({message:`${error.data.status}`,ec:2})
     })
 
   }
@@ -82,9 +73,8 @@ const DeleteUser = () => {
             }
             </tbody>
         </table>
-        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
-        
-        {/* user updation */}
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
+      
         {
           isClose ? <UpdateUser uId={uId} usr={user} closeFn={closeFn} messageSetter={messageSetter}/> : null
         }

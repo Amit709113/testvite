@@ -55,22 +55,15 @@
     color:white;
     /* margin:6px 0; */
     font-size: 1.5rem;
-    
 }
-
-
 
 #section-menu-header .navbar-toggler {
     display: none;
     padding:10px 15px ;
-
-
 }
 #section-menu-header .navbar-toggler:active{
     background: #a2a3;
 }
-
-
 
 .navbar-nav {
     display: -ms-flexbox;

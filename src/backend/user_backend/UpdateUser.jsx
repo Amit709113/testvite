@@ -27,6 +27,7 @@ const UpdateUser = ({uId,usr,closeFn,messageSetter}) => {
     }
     
     //call server
+    messageSetter("submitting wait for responses ... ",2)
     userPut(uId,user).then((resp)=>{
       console.log(resp);
       messageSetter(`user is successfully updated with ${JSON.stringify(resp.id)}`,0 );

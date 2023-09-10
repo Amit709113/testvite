@@ -12,6 +12,7 @@ const CreateCarousel = () => {
     }
     const handlerSubmit = (event)=>{
         event.preventDefault();
+        
         const {carouselLink,carouselAlt}=carousel;
 
         //validate here
@@ -20,6 +21,7 @@ const CreateCarousel = () => {
             return;
         }
         //call server here 
+        setMessage({message:"submitting wait for responses ... ",ec:2})
         carouselPost(carousel).then((resp)=>{
             console.log(resp);
             setMessage({message:`carousel is successfully created with ID ${resp.carouselId}`,ec:0})

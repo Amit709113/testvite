@@ -5,38 +5,31 @@ import { useNavigate } from 'react-router-dom';
 const DeleteNotice = () => {
 
     const[noticeList,setNoticeList]=useState([])
-    const[message,setMessage]=useState("");
+    const[message,setMessage]=useState({message:"",ec:0});
     const[updateNotice,setUpdateNotice]=useState({noticeTitle:"",noticeDesc:"",noticeDate:"",noticeLink:"",noticeAuthor:""})
     const[updateId,setUpdateId]=useState(0);
-    const[updateBox,setUpdateBox]=useState(false);
-    const navigate=useNavigate();
-    const [isError,setIsError]=useState(0);
+    const[updateBox,setUpdateBox]=useState(false);  
 
     const getAllNotice=()=>{
         noticeGet().then((resp)=>{
-            setIsError(0);
-            setMessage("data is fetched successfully")
+            setMessage({message:"data is fetched successfully",ec:0});
             setNoticeList(resp)
         }).catch((error)=>{
             console.error(error);
-            setIsError(0);
-            setMessage(`${error.message} can't connect to server`);
+            setMessage({message:`${error.message} can't connect to server`,ec:2});
         })
     }
-
     useEffect(()=>{
         getAllNotice();
     },[])  
     
     const deleteNoticeById = (id)=>{
         noticeDelete(id).then(()=>{
-            setIsError(0)
-            setMessage(`notice with ${id} is deleted successfully !!`)
+            setMessage({message:`notice with ${id} is deleted successfully !!`,ec:0})
             setTimeout(()=>setMessage(""),3500)
 
         }).catch((error)=>{
-            setIsError(2);
-           setMessage(`something went wrong !! ${error.response.data.message}`)
+           setMessage({message:`something went wrong !! ${error.response.data.message}`,ec:2})
            setTimeout(()=>setMessage(""),3500)
         })
     }
@@ -69,19 +62,17 @@ const DeleteNotice = () => {
         const {noticeTitle,noticeDesc}=updateNotice;
         //validate
         if(noticeTitle.trim()=="" || noticeDesc.trim()=="" ){
-            setMessage("title and description must have some value")
+            setMessage({message:"title and description must have some value",ec:2})
             return ;
         }   
         //call server
         noticeUpdateApiCall(updateId,updateNotice).then((resp)=>{
-            setIsError(0);
-            setMessage("notice is updated successfully refresh page to see changes")
+            setMessage({message:"notice is updated successfully refresh page to see changes",ec:0})
             setTimeout(()=>{setTimeout("")},3000)
             setUpdateBox(false);
             
         }).catch((error)=>{
-            setIsError(2);
-            setMessage(`something went wrong !! ${error.response.data.message}` )
+            setMessage({message:`something went wrong !! ${error.response.data.message}`, ec:2})
             console.error(error);
             setTimeout(()=>setMessage(""),3500)
         })
@@ -97,8 +88,8 @@ const DeleteNotice = () => {
     <>
      <div className='main-element'>
         <h2 className='form-heading'>delete / update </h2>
-        <p className={`${isError==0?`message-success-log`:isError==1?`message-warning-log`:`message-error-log`} message-log` }>{message}</p>
-        
+        <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
+      
 
         <table>
             <thead>

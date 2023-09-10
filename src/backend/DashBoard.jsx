@@ -1,7 +1,7 @@
 import React from 'react'
 import BackendNav from './BackendNav'
 import './Backend-style.css'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 const DashBoard = () => {
   const navigator=useNavigate()
   return (
@@ -11,30 +11,42 @@ const DashBoard = () => {
         <nav>
           <ul className='dash-nav'>
             
-            <li className='active' onClick={()=>{
-              navigator("/testvite/user/dashboard/notice")
-            }}> Notice </li>
+            <li > 
+              <NavLink to={"/testvite/user/dashboard/notice"}>
+                Notice
+              </NavLink>
+             </li>
 
-            <li onClick={()=>{
-              navigator("/testvite/user/dashboard/users")
-            }}> user </li>
+             <li > 
+              <NavLink to={"/testvite/user/dashboard/carousel"}>
+                carousel
+              </NavLink>
+             </li>
+
+             <li > 
+              <NavLink to={"/testvite/user/dashboard/category"}>
+                category
+              </NavLink>
+             </li>
+            <li > 
+              <NavLink to={"/testvite/user/dashboard/gallery"}>
+                gallery
+              </NavLink>
+            </li>
+
+            <li > 
+              <NavLink to={"/testvite/user/dashboard/topper"}>
+                topper
+              </NavLink>
+            </li>
+
+            <li > 
+              <NavLink to={"/testvite/user/dashboard/users"}>
+                users
+              </NavLink>
+            </li>
             
             
-            <li onClick={()=>{
-              navigator("/testvite/user/dashboard/topper")
-            }}> topper </li>
-
-            <li onClick={()=>{
-              navigator("/testvite/user/dashboard/carousel")
-            }}> carousel </li>
-
-            <li onClick={()=>{
-              navigator("/testvite/user/dashboard/category")
-            }}> category </li>
-
-            <li onClick={()=>{
-              navigator("/testvite/user/dashboard/gallery")
-            }}> gallery </li>
             
           </ul>
         </nav>
