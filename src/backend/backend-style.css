@@ -242,6 +242,11 @@ table{
 @media (max-width: 676px){
     #dashboard .dash-nav{
         flex-direction: column;
+        height: max-content;
+        border-bottom :1px solid black;
+    }
+    #dashboard .dash-nav li{
+        border-bottom :1px solid black;
     }
 }
 .icon-btn{

@@ -28,8 +28,8 @@ const BackendNav = () => {
                 <ul className='list'>
                     {
                         login && <> 
-                        <li>{user.email}</li>
-                        <li onClick={logoutHandler}>
+                        <li style={{padding:"12px"}}>{user.email}</li>
+                        <li style={{padding:"12px"}} onClick={logoutHandler}>
                             <span className='icon-btn'> <BiLogOut /></span>
                         </li>
                         </>
