@@ -3,10 +3,8 @@ import { noticePost } from '../../crud/UserService';
 import { useNavigate } from 'react-router-dom';
 
 const CreateNotice = () => {
-    const navigate=useNavigate()
     const [notice,setNotice]=useState({noticeTitle:"",noticeDesc:"",noticeDate:"",noticeLink:"",noticeAuthor:""})
     const [message,setMessage]=useState({message:"",ec:0});
-    const [isError,setIsError]=useState(0);
     const handleChange=(event)=>{
         const {name,value}=event.target;
         setNotice({...notice,[name]:value});
@@ -24,7 +22,7 @@ const CreateNotice = () => {
         //call server
         setMessage({message:"submitting wait for responses ... ",ec:2})
         noticePost(notice).then((resp)=>{
-            messageSetter(`notice is created successfully`,0)
+            setMessage({message:`notice is created successfully`,ec:0})
             
             setTimeout(()=>{
                 setMessage("")

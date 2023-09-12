@@ -3,12 +3,25 @@ const CAROUSEL_DELAY = 3000;
 
 import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs';
 import  "./Carousel.css";
+import { carouselGet } from "../crud/UserService";
+import defaultLink from "../assets/cca.jpg"
 
 const Carousel = (props) => {
-  const { carouselData } = props;
+  const [ carouselData ,setCarouselData] = useState([]);
   const carouselTimeoutRef = useRef(null);
-  const [carouselDelay, setCarouselDelay] = useState(100);
+  const [carouselDelay, setCarouselDelay] = useState(CAROUSEL_DELAY);
   const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(()=>{
+    //call server here
+    carouselGet().then((resp)=>{
+      console.log(resp);
+      setCarouselData(resp);
+
+    }).catch((error)=>{
+      setCarouselData([{carouselAlt:`${error.message}`,carouselComment:`${error.message} server is not responding`, carouselLink:{defaultLink}}])
+    })
+  },[])
 
   const nextSlide=()=>{
     setCarouselIndex(carouselIndex===carouselData.length-1?0:carouselIndex+1);
@@ -25,13 +38,13 @@ const Carousel = (props) => {
     carouselTimeoutRef.current = setTimeout(
       () =>
         setCarouselIndex((prevIndex) =>
-          prevIndex === props.carouselData.length - 1 ? 0 : prevIndex + 1
+          prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
         ),
       carouselDelay
     );
 
     return () => clearTimeout(carouselTimeoutRef.current);
-  }, [props.carouselData.length, carouselIndex, carouselDelay]);
+  }, [carouselData.length, carouselIndex, carouselDelay]);
 
 
   return (
@@ -39,17 +52,15 @@ const Carousel = (props) => {
       <div className="carousel-sub-div" >
         {
           carouselData.map((el, i) => {
+            const {carouselLink,carouselAlt}=el;
             return (
-              <>
                 <div
                   key={i}
                   className={carouselIndex===i?"image-div": `image-div not-visible-carousel`}
                   style={{background:'#aaaaaf'}}
-                  >
-                  <img src={el.src} alt={el.alt} className="image" loading="eager" />
-
+                >
+                  <img src={carouselLink} alt={carouselAlt} className="image" loading="eager" />
                 </div>
-              </>
             );
         })}
         <BsArrowLeftCircleFill className={`arrow leftArrow`} onClick={prevSlide}/>
@@ -73,8 +84,9 @@ const Carousel = (props) => {
             <div className="description-bar">
               {
                 carouselData.map((item,idx)=>{
+                  const{carouselComment}=item;
                   return(
-                    <div className={carouselIndex===idx?"carousel-description":"carousel-description inactive"}>{item.comment}</div>
+                    <div className={carouselIndex===idx?"carousel-description":"carousel-description inactive"} key={idx}>{carouselComment}</div>
                   )
                 })
               }

@@ -41,8 +41,6 @@ export const noticeUpdateApiCall=(id,notice)=>{
 }
 
 
-
-
 //create carousel
 export const carouselPost=(carousel)=>{
   return myAxiosToken.post(CAROUSEL_URL,carousel).then((response)=>response.data);
