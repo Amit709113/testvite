@@ -29,7 +29,6 @@ import Register from './crud/Register'
 
 import DashBoard from './backend/DashBoard'
 import PrivateRoute from './backend/PrivateRoute'
-// import BackendNav from './backend/BackendNav'
 import CreateNotice from './backend/notice_backend/CreateNotice'
 import DeleteNotice from './backend/notice_backend/DeleteNotice.jsx';
 import GetAllNotice from './backend/notice_backend/GetAllNotice'
@@ -53,23 +52,24 @@ import GetAllUser from './backend/user_backend/GetAllUser'
 import CreateUser from './backend/user_backend/CreateUser'
 import DeleteUser from './backend/user_backend/DeleteUser'
 
-
 import Headers from './router/Headers';
 import MayBeShowNavbar from './router/MayBeShowNavbar';
 import Footer from './components/Footer';
 
-
-
 function App() {
   const [showFooter,setShowFooter]=useState(true);
+  const [refNav,setRefNav]=useState(false);
   const setFoot=(value)=>{
     setShowFooter(value);
   }
+  const fnSetter=(loginFlag)=>{
+    setRefNav(loginFlag);
+  }
+
   return (
     <>
-
       <BrowserRouter>
-        <MayBeShowNavbar setFoot={setFoot}>
+        <MayBeShowNavbar setFoot={setFoot} refNav={refNav}>
           <Headers />
         </MayBeShowNavbar>
 
@@ -96,7 +96,8 @@ function App() {
             <Route path='/testvite/notice' element={<Notice/>} />
             <Route path='/testvite/contectus' element={<Contect />} />
 
-            <Route path='/testvite/login' element={<LogIn />} />
+            <Route path='/testvite/login' element={<LogIn fnSetter={fnSetter}/>} />   
+            {/* I have data here */}
             <Route path='/testvite/register' element={<Register/>} />
             <Route path='/testvite/user' element={<PrivateRoute />}>
 

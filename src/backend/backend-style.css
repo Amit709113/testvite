@@ -150,9 +150,13 @@
     text-transform: capitalize;
     font-weight: bold;
     outline: none;
-    border:0.5px solid black;
+    /* border:0.5px solid black; */
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.2s ease;
+}
+.leaf-btn:active{
+    scale:0.9;
 }
 label{
     text-transform: capitalize;
@@ -252,4 +256,26 @@ table{
 .icon-btn{
     font-size: 1.5rem;
     font-weight: bolder;
+}
+.span-loading{
+    display: inline-block;
+    padding: 4px;
+    margin:6px;
+    height: 20px;
+    width:20px;
+    border-radius: 50%;
+    border-top:4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid #37B16B;
+    border-right: 4px solid #37B16B;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
 }

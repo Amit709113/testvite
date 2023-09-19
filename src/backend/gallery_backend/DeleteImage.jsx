@@ -46,7 +46,7 @@ const DeleteImage = () => {
                         <td>{galleryCaption}</td>
                         <td><button className='leaf-btn delete-btn' onClick={()=>handlerDelete(galleryId)}>Delete</button></td>
                     </tr> 
-                }) : <tr><td>loading ...</td><td>{message.message}</td></tr>
+                }) : <tr><td>loading ... <div className='span-loading'></div></td><td>{message.message}</td></tr>
             }
             </tbody>
         </table>

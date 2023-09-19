@@ -52,7 +52,7 @@ const GetAllNotice = () => {
                         <td> {noticeAuthor}</td>
                     </tr>
                     
-                }) : <tr><td>loading ...</td></tr>
+                }) : <tr><td>loading ... <div className='span-loading'></div></td></tr>
             }
             </tbody>
         </table>

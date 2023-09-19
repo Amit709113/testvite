@@ -5,7 +5,7 @@ import {doLogout, getCurrentUserDetail, isLoggedIn } from '../auth';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { BiLogIn,BiLogOut } from "react-icons/bi";
 
-const BackendNav = () => {
+const BackendNav = (props) => {
     const navigate= useNavigate();
     const [login,setLogin]=useState(false);
     const[user,setUser]=useState(undefined);
@@ -13,7 +13,7 @@ const BackendNav = () => {
     useEffect(()=>{
         setLogin(isLoggedIn())
         setUser(getCurrentUserDetail());
-    },[login])
+    },[login,props.refreshNav])
 
     const logoutHandler=()=>{
         doLogout(()=>{

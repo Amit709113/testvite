@@ -13,16 +13,19 @@ export const CATEGORY_URL="api/category/"
 export const GALLERY_URL="api/gallery/"
 export const USER_URL="api/users/"
 
-export const BASE_URL=BASE_URL_DEPLOY;
+
+
+export const BASE_URL=BASE_URL_LOCAL;
 
 export const myAxios=axios.create({
     baseURL:BASE_URL,
 })
 
+
 export const myAxiosToken=axios.create({
     baseURL:BASE_URL,
     headers:{
-        Authorization:`Bearer ${getToken()}`,
+        Authorization:`Bearer ${await getToken()}`,
         "Content-type": "application/json; charset=UTF-8"
         //may be we have to add more
     }

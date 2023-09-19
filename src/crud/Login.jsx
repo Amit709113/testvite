@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import "../backend/backend-style.css"
 
-const Login = () => {
+const Login = ({fnSetter}) => {
   const navigate=useNavigate();
 
   const[loginDetails,setLoginDetails]=useState({username:"",password:""});
@@ -25,37 +25,24 @@ const Login = () => {
       return;
     }
     else{
-      //call server data
-      //change start
-      // logIn(loginDetails).then((resp)=>{
-      //   setMessage(`data come here` )
-      //   console.log(resp);
-      // }).catch((error)=>{
-      //   setMessage(`${error.message}`)
-      //   console.log(error);
-
-      // })
-
-      //change end
       setMessage({message:"verifing credentials ...",ec:"1"})
+
       logIn(loginDetails).then((data)=>{
-        //console.log(data);
         doLogin(data,()=>{
-          // setMessage({message:`welcome ${data.userDto.name} `,ec:0})
+          fnSetter(true);
           console.log(`${data.userDto.name } is logged in  `)
-          //redirct to user dashboard page 
-          // setTimeout(()=>{navigate("/testvite/user/dashboard")},1500)
+          // refresh
+          //transfer frm here 
           
         })
         setMessage({message:`welcome ${data.userDto.name} `,ec:0})
         setTimeout(()=>{
           setMessage({message:"",ec:0})
           navigate("/testvite/user/dashboard")
-          //put here a hook that will refresh each components 
         },1500)
 
       }).catch((error)=>{
-        // console.log(error);
+       
         setMessage({message:`${error.message}`,ec:2})
 
         if(error.response.status!=400 && error.response.status!=404){
@@ -83,7 +70,7 @@ const Login = () => {
     <>
     <div id='item-dash'>
       <h2 className='form-heading'> Login </h2>
-      <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}</p>
+      <p className={`${message.ec==0?`message-success-log`:message.ec==1?`message-warning-log`:`message-error-log`} message-log` }>{message.message}{message.message.length>1?<div className={message.ec>=1?'span-loading':null}></div>:null}</p>
       
       <div className='main-form'>
         <form

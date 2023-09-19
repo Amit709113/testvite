@@ -102,7 +102,7 @@ const GetAllImageByCategory = () => {
                         <td> {galleryLink} </td>
                     </tr>
                     
-                }) : <tr><td>loading ... </td><td>{message.message}</td></tr>
+                }) : <tr><td>loading ... <div className='span-loading'></div></td><td>{message.message}</td></tr>
             }
             </tbody>
         </table>

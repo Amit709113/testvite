@@ -25,7 +25,15 @@ const DeleteUser = () => {
     userDelete(id).then((resp)=>{
       setMessage({message:`${resp.message} with id : ${id} !!`,ec:0})
     }).catch((error)=>{
+      if(error.data!=undefined)
       setMessage({message:`${error.data.status}`,ec:2})
+      else if(error.response.status==403){
+      setMessage(({message:`${error.response.data.message}` ,ec:2}))
+      }
+      else{
+        setMessage({message: "something went wrong : ",ec:2});
+        console.log(error);
+      }
     })
 
   }

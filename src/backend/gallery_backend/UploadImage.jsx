@@ -39,7 +39,6 @@ const UploadImage = () => {
             return ;
         }
         galleryPost(gallery).then((resp)=>{
-            console.log(resp);
             setMessage({message:`Image is successfully added on category ${gallery.galleryCategory} with image id : ${resp.galleryId}`,ec:0});
 
         }).catch((error)=>{

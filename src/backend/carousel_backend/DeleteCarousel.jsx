@@ -104,7 +104,7 @@ const handlerReset=()=>{
                     <td><button className='leaf-btn delete-btn' onClick={()=>handlerDelete(carouselId)}>Delete</button></td>
                     <td><button className='leaf-btn update-btn' onClick={()=>handlerUpdate(carouselId,carousel)}> Update </button></td>
                   </tr>)
-              }):<tr><td>loading ...</td><td>{message.message}</td></tr>
+              }):<tr><td> loading ... <div className='span-loading'></div></td><td>{message.message}</td></tr>
             }
           </tbody>
         </table>

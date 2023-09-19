@@ -5,7 +5,7 @@
 
 export const isLoggedIn=()=>{
     let data = localStorage.getItem("data");
-    if(data==null) return false;
+    if(data==null || undefined ||"") return false;
     else{ return true }
 };
 
@@ -36,10 +36,17 @@ export const getCurrentUserDetail=()=>{
 
 //get current user token
 
-export const getToken=()=>{
-    if(isLoggedIn() ){
-    let token=localStorage.getItem("data");
-    return JSON.parse(token).token;
+export const getToken=async ()=>{
+    try{
+        if(isLoggedIn() ){
+            let token=localStorage.getItem("data");
+            let ans= await JSON.parse(token).token;
+            return ans;
+        }
     }
+    catch(error){
+        console.log(error);
+    }
+    
     return null;
 }

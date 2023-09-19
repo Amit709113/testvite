@@ -15,7 +15,7 @@ const Carousel = (props) => {
   useEffect(()=>{
     //call server here
     carouselGet().then((resp)=>{
-      console.log(resp);
+      // console.log(resp);
       setCarouselData(resp);
 
     }).catch((error)=>{

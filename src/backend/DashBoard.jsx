@@ -3,7 +3,7 @@ import BackendNav from './BackendNav'
 import './Backend-style.css'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 const DashBoard = () => {
-  const navigator=useNavigate()
+  
   return (
     <>
       <div id='dashboard'>
