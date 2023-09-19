@@ -36,11 +36,11 @@ export const getCurrentUserDetail=()=>{
 
 //get current user token
 
-export const getToken=async ()=>{
+export const getToken= ()=>{
     try{
         if(isLoggedIn() ){
             let token=localStorage.getItem("data");
-            let ans= await JSON.parse(token).token;
+            let ans= JSON.parse(token).token;
             return ans;
         }
     }

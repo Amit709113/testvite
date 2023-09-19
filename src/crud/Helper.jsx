@@ -25,7 +25,7 @@ export const myAxios=axios.create({
 export const myAxiosToken=axios.create({
     baseURL:BASE_URL,
     headers:{
-        Authorization:`Bearer ${await getToken()}`,
+        Authorization:`Bearer ${getToken()}`,
         "Content-type": "application/json; charset=UTF-8"
         //may be we have to add more
     }
