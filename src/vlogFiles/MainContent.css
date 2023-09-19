@@ -142,8 +142,18 @@
     flex: 0 0 100%;
     max-width: 100%;
 }
+table{
+    border-collapse: collapse;
+    border:none;
+}
 
+th,td{
+    padding:12px;
+}
 
+tr:nth-child(even){
+    background:#a1e0d47a; 
+}
 
 @media (min-width: 576px){
 

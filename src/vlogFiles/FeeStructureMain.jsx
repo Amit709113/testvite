@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentPageHeading from './ContentPageHeading';
 import NbStartColumn from "./NbStartColumn";
-import MainContentForAllPages from "./MainContentForAllPages";
+import MainContentForFeeStructure from './MainContentForFeeStructure';
 
 import './MainContent.css'
 
@@ -15,7 +15,7 @@ const FeeStructureMain = ({data}) => {
               <div className="containera">
                   <div className="rowa  pmni">
                     <NbStartColumn />
-                    <MainContentForAllPages  reqData={remData} />
+                    <MainContentForFeeStructure reqData={remData}/>
                   </div>
               </div>
           </div>

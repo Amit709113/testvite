@@ -131,6 +131,7 @@
 /* main-element delete create or update of gallery,notice,event */
 .main-element{
     background-color: #eee;
+    overflow-x: auto;
 
 }
 .main-element table,th,td{

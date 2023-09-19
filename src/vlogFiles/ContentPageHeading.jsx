@@ -7,7 +7,6 @@ import './ContentPageHeading.css'
 
 const ContentPageHeading = ({obj}) => {
 
-  console.log(obj);
 
   const {bgimgsrc,heading,...newObj}=obj;
   
